@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Next Posting | From service to a corporate career</title>
+<meta name="description" content="A free community helping people from the Army, Navy and Air Force move into corporate roles: CVs recruiters understand, applications that match the job, and referrals from people already inside.">
+<meta property="og:title" content="Next Posting | From service to a corporate career">
+<meta property="og:description" content="A free community helping people from the Army, Navy and Air Force move into corporate roles.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0B1F3A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B1F3A'/%3E%3Cpath d='M16 30 L32 18 L48 30 M16 44 L32 32 L48 44' fill='none' stroke='%23C9A24D' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy: #0B1F3A;
+    --navy-2: #13294A;
+    --olive: #5B6B3A;
+    --brass: #C9A24D;
+    --brass-ink: #7A5C17;
+    --paper: #F7F5F0;
+    --white: #FFFFFF;
+    --ink: #1B2230;
+    --muted: #596070;
+    --line: #DCD6C8;
+    --error: #A2361F;
+    --head: 'Barlow Semi Condensed', 'Arial Narrow', Arial, sans-serif;
+    --body: 'Barlow', 'Segoe UI', Arial, sans-serif;
+    --wrap: 1120px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: var(--head);
+    line-height: 1.1;
+    margin: 0 0 0.5em;
+    letter-spacing: -0.01em;
+  }
+  h2 { font-size: clamp(30px, 4vw, 42px); font-weight: 700; color: var(--navy); }
+  h3 { font-size: 22px; font-weight: 600; color: var(--navy); }
+  p { margin: 0 0 1em; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--brass); outline-offset: 2px; }
+
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+  .lede { font-size: 19px; color: var(--muted); max-width: 62ch; }
+
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    font-family: var(--head);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    padding: 13px 24px;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color .15s, border-color .15s, color .15s;
+  }
+  .btn-brass { background: var(--brass); color: var(--navy); }
+  .btn-brass:hover { background: #D8B464; }
+  .btn-outline { border-color: rgba(247,245,240,.55); color: var(--paper); background: transparent; }
+  .btn-outline:hover { border-color: var(--paper); }
+  .btn[disabled] { opacity: .6; cursor: wait; }
+
+  /* Header */
+  .site-header { background: var(--navy); color: var(--paper); }
+  .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .brand {
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--head); font-weight: 700; font-size: 22px;
+    text-decoration: none; color: var(--paper);
+  }
+  .brand svg { width: 28px; height: 28px; }
+  .nav { display: flex; align-items: center; gap: 28px; }
+  .nav a.link { text-decoration: none; font-weight: 500; color: rgba(247,245,240,.8); }
+  .nav a.link:hover { color: var(--paper); }
+  .nav .btn { padding: 8px 18px; font-size: 16px; }
+
+  /* Hero */
+  .hero { background: var(--navy); color: var(--paper); padding: 72px 0 40px; overflow: hidden; }
+  .hero-kicker { font-weight: 500; color: var(--brass); margin-bottom: 18px; font-size: 17px; }
+  .hero h1 {
+    font-size: clamp(42px, 7vw, 80px);
+    font-weight: 700;
+    color: var(--paper);
+    max-width: 16ch;
+    margin-bottom: 24px;
+  }
+  .hero .lede { color: rgba(247,245,240,.78); font-size: 20px; max-width: 56ch; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin: 32px 0 14px; }
+  .hero-note { font-size: 15px; color: rgba(247,245,240,.6); }
+
+  .route { margin-top: 48px; }
+  .route svg { width: 100%; height: auto; display: block; }
+  .route .trail { fill: none; stroke: rgba(247,245,240,.22); stroke-width: 3; stroke-dasharray: 2 12; stroke-linecap: round; }
+  .route .march { fill: none; stroke: var(--brass); stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 1400; stroke-dashoffset: 1400; animation: march 2.6s .4s ease-out forwards; }
+  .route .stop { fill: var(--navy); stroke: var(--brass); stroke-width: 3; }
+  .route .label { fill: rgba(247,245,240,.75); font-family: var(--head); font-size: 24px; font-weight: 600; }
+  .route .icon { fill: none; stroke: var(--paper); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+  .route .icon-brass { stroke: var(--brass); }
+  @keyframes march { to { stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: reduce) {
+    .route .march { animation: none; stroke-dashoffset: 0; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* Sections */
+  section.block { padding: 88px 0; }
+  .block-white { background: var(--white); }
+
+  .gap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  .gap-list { list-style: none; margin: 0; padding: 0; }
+  .gap-list li { border-left: 3px solid var(--olive); padding: 4px 0 4px 20px; margin-bottom: 28px; }
+  .gap-list li:last-child { margin-bottom: 0; }
+  .gap-list h3 { margin-bottom: 6px; }
+  .gap-list p { margin: 0; color: var(--muted); }
+
+  .help-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 48px; margin-top: 44px; }
+  .help-item h3 { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .help-item h3::before { content: ''; width: 10px; height: 10px; background: var(--brass); flex: none; transform: rotate(45deg); }
+  .help-item p { color: var(--muted); margin: 0; }
+
+  .landing { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--line); }
+  .landing p { font-weight: 600; color: var(--navy); margin-bottom: 12px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 0; padding: 0; }
+  .chips li { background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 500; }
+
+  .steps { list-style: none; margin: 44px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; counter-reset: step; position: relative; }
+  .steps::before { content: ''; position: absolute; top: 22px; left: 22px; right: 22px; border-top: 3px dotted var(--line); }
+  .steps li { position: relative; counter-increment: step; }
+  .steps li::before {
+    content: counter(step);
+    display: grid; place-items: center;
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--navy); color: var(--brass);
+    font-family: var(--head); font-weight: 700; font-size: 22px;
+    margin-bottom: 18px; position: relative;
+  }
+  .steps p { color: var(--muted); margin: 0; }
+
+  .mentor-band { background: var(--navy-2); color: var(--paper); padding: 72px 0; }
+  .mentor-band .wrap { display: flex; gap: 40px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+  .mentor-band h2 { color: var(--paper); }
+  .mentor-band p { color: rgba(247,245,240,.78); max-width: 58ch; margin: 0; font-size: 18px; }
+
+  .about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 56px; align-items: start; }
+  .independent { border-left: 3px solid var(--olive); padding-left: 20px; color: var(--muted); font-size: 16px; }
+
+  /* Registration */
+  .register { background: var(--paper); }
+  .panel { background: var(--white); border: 1px solid var(--line); border-radius: 8px; margin-top: 36px; }
+  .tabs { display: flex; border-bottom: 1px solid var(--line); }
+  .tab {
+    flex: 1; background: none; border: 0; padding: 18px 16px;
+    font-family: var(--head); font-size: 19px; font-weight: 600; color: var(--muted);
+    cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -1px;
+  }
+  .tab[aria-selected="true"] { color: var(--navy); border-bottom-color: var(--brass); }
+  .tab-panel { padding: 32px; }
+  .tab-panel[hidden] { display: none; }
+  .form-note { background: var(--paper); border-left: 3px solid var(--olive); padding: 12px 16px; font-size: 15px; color: var(--muted); margin-bottom: 28px; }
+
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 24px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field.full { grid-column: 1 / -1; }
+  label, legend { font-weight: 600; font-size: 15px; color: var(--navy); }
+  .opt { font-weight: 400; color: var(--muted); }
+  input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="month"], select, textarea {
+    font: inherit; font-size: 16px;
+    padding: 11px 12px;
+    border: 1px solid #C9C3B5; border-radius: 4px;
+    background: var(--white); color: var(--ink);
+    width: 100%;
+    min-height: 46px;
+  }
+  textarea { min-height: 96px; resize: vertical; }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--navy); box-shadow: 0 0 0 3px rgba(201,162,77,.35); }
+  fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+  legend { margin-bottom: 10px; padding: 0; }
+  .toggles { display: flex; flex-wrap: wrap; gap: 8px; }
+  .toggle { position: relative; }
+  .toggle input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .toggle span {
+    display: inline-block; padding: 8px 14px; border: 1px solid #C9C3B5; border-radius: 999px;
+    font-size: 15px; font-weight: 500; color: var(--ink); cursor: pointer; user-select: none; background: var(--white);
+  }
+  .toggle input:checked + span { background: var(--navy); border-color: var(--navy); color: var(--paper); }
+  .toggle input:focus-visible + span { outline: 3px solid var(--brass); outline-offset: 2px; }
+  .consent { display: flex; gap: 12px; align-items: flex-start; font-weight: 400; color: var(--ink); font-size: 15px; }
+  .consent input { margin-top: 4px; width: 18px; height: 18px; flex: none; accent-color: var(--navy); }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .form-actions { margin-top: 28px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .form-error { color: var(--error); font-weight: 500; margin: 0; }
+
+  .success { text-align: left; padding: 8px 0; }
+  .success h3 { font-size: 28px; }
+  .reg-id {
+    display: inline-flex; align-items: center; gap: 14px;
+    font-family: var(--head); font-size: 34px; font-weight: 700; color: var(--navy);
+    background: var(--paper); border: 1px dashed var(--brass); border-radius: 6px;
+    padding: 10px 18px; margin: 8px 0 18px;
+  }
+  .copy-btn { font-family: var(--body); font-size: 14px; font-weight: 600; background: none; border: 1px solid var(--line); border-radius: 4px; padding: 6px 10px; cursor: pointer; color: var(--navy); }
+
+  /* FAQ */
+  .faq { max-width: 780px; margin-top: 36px; }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary {
+    cursor: pointer; list-style: none; padding: 20px 36px 20px 0; position: relative;
+    font-family: var(--head); font-size: 21px; font-weight: 600; color: var(--navy);
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: '+'; position: absolute; right: 4px; top: 16px; font-size: 26px; color: var(--brass-ink); }
+  .faq details[open] summary::after { content: '\2212'; }
+  .faq details p { color: var(--muted); padding-bottom: 12px; max-width: 66ch; }
+
+  /* Footer */
+  .site-footer { background: var(--navy); color: rgba(247,245,240,.7); padding: 40px 0; font-size: 15px; }
+  .site-footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+  .site-footer a { color: var(--paper); }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .gap-grid, .about-grid { grid-template-columns: 1fr; gap: 36px; }
+    .help-grid { grid-template-columns: 1fr 1fr; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .steps::before { display: none; }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 16px; }
+    .nav a.link { display: none; }
+    .hero { padding-top: 48px; }
+    .route .label { display: none; }
+    section.block { padding: 64px 0; }
+    .help-grid, .steps, .form-grid { grid-template-columns: 1fr; }
+    .tab-panel { padding: 22px 18px; }
+    .tab { font-size: 16px; padding: 16px 8px; }
+    .hero-actions .btn { width: 100%; text-align: center; }
+    .reg-id { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Next Posting home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 30 L32 17 L50 30 M14 45 L32 32 L50 45" fill="none" stroke="#C9A24D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Next Posting
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a class="link" href="#about">About</a>
+      <a class="link" href="#how">How it works</a>
+      <a class="link" href="#faq">FAQ</a>
+      <a class="btn btn-brass" href="#register" data-track="forces">Register</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <p class="hero-kicker">From service to a corporate career</p>
+      <h1>You've led in uniform. Now let's get you hired.</h1>
+      <p class="lede">A free community helping people from the Army, Navy and Air Force move into corporate roles, with a CV recruiters understand, applications that match the job, and referrals from people already inside.</p>
+      <div class="hero-actions">
+        <a class="btn btn-brass" href="#register" data-track="forces">I'm moving out of service</a>
+        <a class="btn btn-outline" href="#register" data-track="mentors">I work in corporate and want to help</a>
+      </div>
+      <p class="hero-note">Free. No fees, no placement charges.</p>
+
+      <div class="route" aria-hidden="true">
+        <svg viewBox="0 0 1000 250">
+          <path class="trail" d="M70 170 C 190 170, 230 80, 330 80 S 480 175, 590 175 S 760 70, 880 100"/>
+          <path class="march" d="M70 170 C 190 170, 230 80, 330 80 S 480 175, 590 175 S 760 70, 880 100"/>
+          <path class="icon icon-brass" d="M50 168 L70 152 L90 168 M50 186 L70 170 L90 186"/>
+          <circle class="stop" cx="330" cy="80" r="9"/>
+          <circle class="stop" cx="590" cy="175" r="9"/>
+          <rect class="icon" x="872" y="82" width="56" height="40" rx="5"/>
+          <path class="icon" d="M888 82 V73 H912 V82 M872 99 H928"/>
+          <text class="label" x="70" y="228" text-anchor="middle">Service</text>
+          <text class="label" x="330" y="45" text-anchor="middle">Your CV</text>
+          <text class="label" x="590" y="228" text-anchor="middle">Applications</text>
+          <text class="label" x="900" y="160" text-anchor="middle">Offer</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="block block-white" id="gap">
+    <div class="wrap gap-grid">
+      <div>
+        <h2>The experience is there. The translation isn't.</h2>
+        <p class="lede">Years of leading teams, running logistics and managing people under pressure don't come across well on a corporate CV. Most people leaving the forces have never written one for a recruiter, never used job portals properly, and don't know how referrals actually work. That's the gap we're here to close.</p>
+      </div>
+      <ul class="gap-list">
+        <li>
+          <h3>CVs written for the wrong reader</h3>
+          <p>Service records list postings and appointments. Recruiters look for scope, numbers and results, in their own language.</p>
+        </li>
+        <li>
+          <h3>Applying without matching</h3>
+          <p>Sending the same CV to fifty openings rarely works. Each application has to reflect the job description.</p>
+        </li>
+        <li>
+          <h3>No one to ask inside</h3>
+          <p>Most corporate hiring runs on referrals, and most people leaving service don't know who to ask.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="wrap">
+      <h2>What we help with</h2>
+      <div class="help-grid">
+        <div class="help-item"><h3>CV rewrite</h3><p>Turning ranks, appointments and responsibilities into terms hiring managers recognise.</p></div>
+        <div class="help-item"><h3>Matching to job descriptions</h3><p>Tailoring your CV for each role you apply to.</p></div>
+        <div class="help-item"><h3>LinkedIn profile</h3><p>A headline and summary that show up in recruiter searches.</p></div>
+        <div class="help-item"><h3>Job search basics</h3><p>Which portals to use, setting alerts, and following up.</p></div>
+        <div class="help-item"><h3>Referrals</h3><p>Introductions through corporate professionals in our network, where there's a genuine fit.</p></div>
+        <div class="help-item"><h3>Interview preparation</h3><p>How corporate interviews differ, and how to talk about your service.</p></div>
+      </div>
+      <div class="landing">
+        <p>Where people often land</p>
+        <ul class="chips">
+          <li>Operations</li>
+          <li>Supply chain and logistics</li>
+          <li>Procurement</li>
+          <li>HR and administration</li>
+          <li>Security and risk</li>
+          <li>Project management</li>
+          <li>Facilities</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block block-white" id="how">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><h3>Register</h3><p>It takes about three minutes.</p></li>
+        <li><h3>We get in touch</h3><p>Someone from the team reaches out on WhatsApp or email.</p></li>
+        <li><h3>Work on your profile</h3><p>CV, LinkedIn and target roles, one piece at a time.</p></li>
+        <li><h3>Apply and get referred</h3><p>Tailored applications, plus introductions where we have a contact.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="mentor-band">
+    <div class="wrap">
+      <div>
+        <h2>Work in corporate? Lend a hand.</h2>
+        <p>If you've hired, managed or worked alongside people from the forces, you know what they bring. An hour a month reviewing a CV, running a mock interview or passing on a referral makes a real difference.</p>
+      </div>
+      <a class="btn btn-brass" href="#register" data-track="mentors">Register as a mentor</a>
+    </div>
+  </section>
+
+  <section class="block block-white">
+    <div class="wrap about-grid">
+      <div>
+        <h2>Who we are</h2>
+        <p class="lede">Next Posting is a small, newly started team of corporate professionals who want to see more people from the forces do well in civilian careers. We're building the community first, and everything we offer is free.</p>
+      </div>
+      <p class="independent">Next Posting is independent and not affiliated with the Indian Armed Forces, the Ministry of Defence or any government body.</p>
+    </div>
+  </section>
+
+  <section class="block register" id="register">
+    <div class="wrap">
+      <h2>Join the community</h2>
+      <p class="lede">Registration is free and takes about three minutes.</p>
+
+      <div class="panel">
+        <div class="tabs" role="tablist">
+          <button class="tab" role="tab" id="tab-forces" aria-controls="panel-forces" aria-selected="true">Moving out of service</button>
+          <button class="tab" role="tab" id="tab-mentors" aria-controls="panel-mentors" aria-selected="false" tabindex="-1">Corporate mentor</button>
+        </div>
+
+        <!-- Forces form -->
+        <div class="tab-panel" role="tabpanel" id="panel-forces" aria-labelledby="tab-forces">
+          <form data-track="forces" novalidate>
+            <p class="form-note">Please don't share your service number, unit or posting details. We don't need them.</p>
+            <div class="form-grid">
+              <div class="field">
+                <label for="f-name">Full name</label>
+                <input type="text" id="f-name" name="fullName" autocomplete="name" required maxlength="120">
+              </div>
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input type="email" id="f-email" name="email" autocomplete="email" required maxlength="160">
+              </div>
+              <div class="field">
+                <label for="f-wa">WhatsApp number</label>
+                <input type="tel" id="f-wa" name="whatsapp" autocomplete="tel" placeholder="98765 43210" required maxlength="20">
+              </div>
+              <div class="field">
+                <label for="f-service">Service</label>
+                <select id="f-service" name="service" required>
+                  <option value="">Select</option>
+                  <option>Army</option>
+                  <option>Navy</option>
+                  <option>Air Force</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="f-category">Category</label>
+                <select id="f-category" name="category" required>
+                  <option value="">Select</option>
+                  <option>SSC officer</option>
+                  <option>PC officer (premature or regular retirement)</option>
+                  <option>JCO</option>
+                  <option>NCO or other rank</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="f-rank">Rank at release <span class="opt">(optional)</span></label>
+                <input type="text" id="f-rank" name="rank" maxlength="60">
+              </div>
+              <div class="field">
+                <label for="f-years">Years of service</label>
+                <input type="number" id="f-years" name="yearsOfService" min="0" max="45" inputmode="numeric" required>
+              </div>
+              <div class="field">
+                <label for="f-release">Release date, or expected</label>
+                <input type="month" id="f-release" name="releaseDate" required>
+              </div>
+              <fieldset class="field full">
+                <legend>Roles you're aiming for</legend>
+                <div class="toggles">
+                  <label class="toggle"><input type="checkbox" name="targetRoles" value="Operations"><span>Operations</span></label>
+                  <label class="toggle"><input type="checkbox" name="targetRoles" value="Supply chain and logistics"><span>Supply chain and logistics</span></label>
+                  <label class="toggle"><input type="checkbox" name="targetRoles" value="Procurement"><span>Procurement</span></label>
+                  <label class="toggle"><input type="checkbox" name="targetRoles" value="HR and administration"><span>HR and administration</span></label>
+                  <label class="toggle"><input type="checkbox" name="targetRoles" value="Security and risk"><span>Security and risk</span></label>
+                  <label class="toggle"><input type="checkbox" name="targetRoles" value="Project management"><span>Project management</span></label>
+                  <label class="toggle"><input type="checkbox" name="targetRoles" value="Facilities"><span>Facilities</span></label>
+                  <label class="toggle"><input type="checkbox" name="targetRoles" value="Not sure yet"><span>Not sure yet</span></label>
+                </div>
+              </fieldset>
+              <fieldset class="field full">
+                <legend>What do you need help with?</legend>
+                <div class="toggles">
+                  <label class="toggle"><input type="checkbox" name="helpNeeded" value="CV rewrite"><span>CV rewrite</span></label>
+                  <label class="toggle"><input type="checkbox" name="helpNeeded" value="Matching to job descriptions"><span>Matching to job descriptions</span></label>
+                  <label class="toggle"><input type="checkbox" name="helpNeeded" value="LinkedIn profile"><span>LinkedIn profile</span></label>
+                  <label class="toggle"><input type="checkbox" name="helpNeeded" value="Job search basics"><span>Job search basics</span></label>
+                  <label class="toggle"><input type="checkbox" name="helpNeeded" value="Referrals"><span>Referrals</span></label>
+                  <label class="toggle"><input type="checkbox" name="helpNeeded" value="Interview preparation"><span>Interview preparation</span></label>
+                </div>
+              </fieldset>
+              <div class="field">
+                <label for="f-cities">Preferred cities <span class="opt">(optional)</span></label>
+                <input type="text" id="f-cities" name="cities" placeholder="Gurugram, Pune" maxlength="150">
+              </div>
+              <div class="field">
+                <label for="f-li">LinkedIn profile <span class="opt">(optional)</span></label>
+                <input type="text" id="f-li" name="linkedin" inputmode="url" placeholder="linkedin.com/in/yourname" maxlength="200">
+              </div>
+              <div class="field full">
+                <label for="f-notes">Anything else we should know? <span class="opt">(optional)</span></label>
+                <textarea id="f-notes" name="notes" maxlength="500"></textarea>
+              </div>
+              <div class="field full">
+                <label class="consent"><input type="checkbox" name="consent" required><span>I agree that Next Posting can store these details and contact me about my job search. My details won't be shared with anyone without my permission.</span></label>
+              </div>
+            </div>
+            <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-brass">Register</button>
+              <p class="form-error" role="alert" aria-live="polite"></p>
+            </div>
+          </form>
+          <div class="success" hidden aria-live="polite"></div>
+        </div>
+
+        <!-- Mentors form -->
+        <div class="tab-panel" role="tabpanel" id="panel-mentors" aria-labelledby="tab-mentors" hidden>
+          <form data-track="mentors" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="m-name">Full name</label>
+                <input type="text" id="m-name" name="fullName" autocomplete="name" required maxlength="120">
+              </div>
+              <div class="field">
+                <label for="m-email">Email</label>
+                <input type="email" id="m-email" name="email" autocomplete="email" required maxlength="160">
+              </div>
+              <div class="field">
+                <label for="m-wa">WhatsApp number</label>
+                <input type="tel" id="m-wa" name="whatsapp" autocomplete="tel" placeholder="98765 43210" required maxlength="20">
+              </div>
+              <div class="field">
+                <label for="m-company">Company</label>
+                <input type="text" id="m-company" name="company" autocomplete="organization" required maxlength="120">
+              </div>
+              <div class="field">
+                <label for="m-function">Function</label>
+                <input type="text" id="m-function" name="function" placeholder="Operations, HR, Finance" required maxlength="100">
+              </div>
+              <div class="field">
+                <label for="m-seniority">Seniority</label>
+                <select id="m-seniority" name="seniority" required>
+                  <option value="">Select</option>
+                  <option>Individual contributor</option>
+                  <option>Manager</option>
+                  <option>Senior manager</option>
+                  <option>Director or above</option>
+                </select>
+              </div>
+              <fieldset class="field full">
+                <legend>How can you help?</legend>
+                <div class="toggles">
+                  <label class="toggle"><input type="checkbox" name="canHelpWith" value="CV review"><span>CV review</span></label>
+                  <label class="toggle"><input type="checkbox" name="canHelpWith" value="Mock interviews"><span>Mock interviews</span></label>
+                  <label class="toggle"><input type="checkbox" name="canHelpWith" value="Referrals"><span>Referrals</span></label>
+                  <label class="toggle"><input type="checkbox" name="canHelpWith" value="LinkedIn review"><span>LinkedIn review</span></label>
+                  <label class="toggle"><input type="checkbox" name="canHelpWith" value="Career guidance"><span>Career guidance</span></label>
+                </div>
+              </fieldset>
+              <div class="field full">
+                <label for="m-li">LinkedIn profile <span class="opt">(optional)</span></label>
+                <input type="text" id="m-li" name="linkedin" inputmode="url" placeholder="linkedin.com/in/yourname" maxlength="200">
+              </div>
+              <div class="field full">
+                <label class="consent"><input type="checkbox" name="consent" required><span>I agree that Next Posting can store these details and contact me about mentoring.</span></label>
+              </div>
+            </div>
+            <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-brass">Register as a mentor</button>
+              <p class="form-error" role="alert" aria-live="polite"></p>
+            </div>
+          </form>
+          <div class="success" hidden aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block block-white" id="faq">
+    <div class="wrap">
+      <h2>Questions</h2>
+      <div class="faq">
+        <details>
+          <summary>Is it really free?</summary>
+          <p>Yes, for you. We will never charge candidates. In future, companies that hire through us may pay us a fee, the way recruitment firms work. That fee never comes out of your salary.</p>
+        </details>
+        <details>
+          <summary>Who can register?</summary>
+          <p>Anyone serving or who has served in the Army, Navy or Air Force and is planning a corporate career: SSC officers, officers taking premature retirement, JCOs, NCOs and other ranks.</p>
+        </details>
+        <details>
+          <summary>Do you guarantee a job?</summary>
+          <p>No. We help you present yourself well and apply properly, and we refer where there's a genuine fit. The hiring decision is always the company's.</p>
+        </details>
+        <details>
+          <summary>What happens after I register?</summary>
+          <p>We'll contact you on WhatsApp or email. We're a small team, so it can take a few days.</p>
+        </details>
+        <details>
+          <summary>What do you do with my details?</summary>
+          <p>We use them only to help with your job search, and we never sell them. <span class="contact-yes">To have them deleted, email us at <a data-contact href="#"></a>.</span><span class="contact-no">To have them deleted, just let us know when we contact you.</span></p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>&copy; <span id="year">2026</span> Next Posting<span class="contact-yes">. Contact: <a data-contact href="#"></a></span></span>
+    <span>Independent community, not affiliated with any government body.</span>
+  </div>
+</footer>
+
+<script>
+  // ---- Settings: the only part you normally edit ----
+  const CONFIG = {
+    API_URL: 'https://nextposting-api.unbndrunclub.workers.dev',
+    DIRECT_URL: 'https://script.google.com/macros/s/AKfycbxETy84BwtbZclEzCW5ZLsHzeSsCUksc0ltrLupvQyEX4xC8N03_Ngtoc9FMaRvAt_c/exec',
+    CONTACT_EMAIL: 'nextposting@protonmail.com' // leave blank ('') to hide contact lines
+  };
+
+  // Wake the backend as soon as the page opens
+  fetch(CONFIG.API_URL).catch(() => {});
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Contact email
+  const hasEmail = /@/.test(CONFIG.CONTACT_EMAIL);
+  document.querySelectorAll('[data-contact]').forEach(a => {
+    a.textContent = CONFIG.CONTACT_EMAIL;
+    a.href = 'mailto:' + CONFIG.CONTACT_EMAIL;
+  });
+  document.querySelectorAll('.contact-yes').forEach(el => el.hidden = !hasEmail);
+  document.querySelectorAll('.contact-no').forEach(el => el.hidden = hasEmail);
+
+  // Tabs
+  const tabs = { forces: document.getElementById('tab-forces'), mentors: document.getElementById('tab-mentors') };
+  const panels = { forces: document.getElementById('panel-forces'), mentors: document.getElementById('panel-mentors') };
+  function showTab(track) {
+    Object.keys(tabs).forEach(k => {
+      const on = k === track;
+      tabs[k].setAttribute('aria-selected', on);
+      tabs[k].tabIndex = on ? 0 : -1;
+      panels[k].hidden = !on;
+    });
+  }
+  tabs.forces.addEventListener('click', () => showTab('forces'));
+  tabs.mentors.addEventListener('click', () => showTab('mentors'));
+  document.querySelector('.tabs').addEventListener('keydown', e => {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    const next = tabs.forces.getAttribute('aria-selected') === 'true' ? 'mentors' : 'forces';
+    showTab(next); tabs[next].focus();
+  });
+  document.querySelectorAll('a[data-track]').forEach(a => {
+    a.addEventListener('click', () => showTab(a.dataset.track));
+  });
+
+  // Helpers
+  function timedFetch(url, opts, ms = 25000) {
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), ms);
+    return fetch(url, { ...opts, signal: ctrl.signal }).finally(() => clearTimeout(t));
+  }
+
+  async function send(payload) {
+    const opts = { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) };
+    try {
+      const r = await timedFetch(CONFIG.API_URL, opts);
+      if (r.status >= 500) throw new Error('worker unavailable');
+      return await r.json();
+    } catch (err) {
+      // Fallback: go straight to Google if the Worker is unreachable
+      const r = await timedFetch(CONFIG.DIRECT_URL, opts);
+      return await r.json();
+    }
+  }
+
+  function normalisePhone(v) {
+    let d = v.replace(/[^\d+]/g, '');
+    if (/^\d{10}$/.test(d)) d = '+91' + d;
+    else if (/^91\d{10}$/.test(d)) d = '+' + d;
+    else if (/^0\d{10}$/.test(d)) d = '+91' + d.slice(1);
+    return d;
+  }
+
+  function normaliseLinkedIn(v) {
+    v = v.trim();
+    if (!v) return '';
+    if (!/^https?:\/\//i.test(v)) v = 'https://' + v;
+    return v;
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  }
+
+  // Forms
+  document.querySelectorAll('form[data-track]').forEach(form => {
+    const errorEl = form.querySelector('.form-error');
+    const btn = form.querySelector('button[type="submit"]');
+    const btnText = btn.textContent;
+    const successEl = form.parentElement.querySelector('.success');
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      errorEl.textContent = '';
+
+      if (!form.checkValidity()) {
+        const bad = form.querySelector(':invalid');
+        const name = bad && bad.name;
+        errorEl.textContent = name === 'consent'
+          ? 'Please tick the consent box to continue.'
+          : 'Please fill in the highlighted field.';
+        if (bad) bad.focus();
+        return;
+      }
+
+      const fd = new FormData(form);
+      const payload = { track: form.dataset.track };
+      for (const [k, v] of fd.entries()) {
+        if (k === 'consent') continue;
+        if (payload[k] !== undefined) {
+          payload[k] = [].concat(payload[k], v);
+        } else {
+          payload[k] = v;
+        }
+      }
+      ['targetRoles', 'helpNeeded', 'canHelpWith'].forEach(k => {
+        if (payload[k] !== undefined && !Array.isArray(payload[k])) payload[k] = [payload[k]];
+      });
+
+      payload.whatsapp = normalisePhone(payload.whatsapp || '');
+      const digits = payload.whatsapp.replace(/\D/g, '');
+      if (digits.length < 10 || digits.length > 15) {
+        errorEl.textContent = 'Please enter a valid WhatsApp number.';
+        form.querySelector('[name="whatsapp"]').focus();
+        return;
+      }
+      if (payload.linkedin !== undefined) payload.linkedin = normaliseLinkedIn(payload.linkedin);
+
+      btn.disabled = true;
+      btn.textContent = 'Registering...';
+
+      try {
+        const res = await send(payload);
+        if (!res || !res.ok) throw new Error((res && res.error) || 'Registration failed. Please try again.');
+
+        const id = escapeHtml(res.regId);
+        const heading = res.existing ? 'You\'re already registered' : 'You\'re registered';
+        const intro = res.existing
+          ? 'This email is already registered with us. Your ID is:'
+          : 'Thanks for joining. Your registration ID is:';
+        successEl.innerHTML =
+          '<h3>' + heading + '</h3>' +
+          '<p>' + intro + '</p>' +
+          '<div class="reg-id"><span>' + id + '</span><button type="button" class="copy-btn">Copy</button></div>' +
+          '<p>Keep it handy. We\'ll contact you on WhatsApp or email, usually within a few days.</p>';
+        const copyBtn = successEl.querySelector('.copy-btn');
+        copyBtn.addEventListener('click', () => {
+          navigator.clipboard && navigator.clipboard.writeText(res.regId).then(() => { copyBtn.textContent = 'Copied'; });
+        });
+        form.hidden = true;
+        successEl.hidden = false;
+        successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } catch (err) {
+        errorEl.textContent = err.name === 'AbortError'
+          ? 'This is taking too long. Please check your connection and try again.'
+          : (err.message && err.message !== 'Failed to fetch' ? err.message : 'Could not connect. Please check your connection and try again.');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = btnText;
+      }
+    });
+  });
+</script>
+</body>
+</html>
