@@ -1,314 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Next Posting | From service to a corporate career</title>
-<meta name="description" content="A free community helping people from the Army, Navy and Air Force move into corporate roles: CVs recruiters understand, applications that match the job, and referrals from people already inside.">
-<meta property="og:title" content="Next Posting | From service to a corporate career">
-<meta property="og:description" content="A free community helping people from the Army, Navy and Air Force move into corporate roles.">
+<title>Next Posting | From defence to the corporate world</title>
+<meta name="description" content="Free help for people from the Army, Navy and Air Force moving into corporate jobs: CVs recruiters read, applications that fit, and referrals from people inside.">
+<meta property="og:title" content="Next Posting | From defence to the corporate world">
+<meta property="og:description" content="Free help for people from the Army, Navy and Air Force moving into corporate jobs.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#0B1F3A">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B1F3A'/%3E%3Cpath d='M16 30 L32 18 L48 30 M16 44 L32 32 L48 44' fill='none' stroke='%23C9A24D' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0C1B2E">
+<meta name="color-scheme" content="only light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230C1B2E'/%3E%3Cpath d='M16 30 L32 18 L48 30 M16 44 L32 32 L48 44' fill='none' stroke='%23C8A04A' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #0B1F3A;
-    --navy-2: #13294A;
-    --olive: #5B6B3A;
-    --brass: #C9A24D;
-    --brass-ink: #7A5C17;
-    --paper: #F7F5F0;
+    color-scheme: only light;
+    --ink: #0C1B2E;
+    --navy: #16304F;
+    --field: #E7EBE4;
     --white: #FFFFFF;
-    --ink: #1B2230;
-    --muted: #596070;
-    --line: #DCD6C8;
-    --error: #A2361F;
-    --head: 'Barlow Semi Condensed', 'Arial Narrow', Arial, sans-serif;
-    --body: 'Barlow', 'Segoe UI', Arial, sans-serif;
-    --wrap: 1120px;
+    --olive: #4F5B32;
+    --brass: #C8A04A;
+    --brass-ink: #7A5B14;
+    --stamp: #A8322A;
+    --paper: #F3EFE3;
+    --text: #152033;
+    --muted: #566072;
+    --line: #CDD3CB;
+    --error: #A8322A;
+    --font: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+    --wrap: 1180px;
   }
-
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    margin: 0;
-    font-family: var(--body);
-    font-size: 17px;
-    line-height: 1.6;
-    color: var(--ink);
-    background: var(--paper);
-    -webkit-font-smoothing: antialiased;
+    margin: 0; font-family: var(--font); font-size: 17px; line-height: 1.55;
+    color: var(--text); background: var(--white); -webkit-font-smoothing: antialiased;
+    font-variation-settings: 'wdth' 100;
   }
-  h1, h2, h3 {
-    font-family: var(--head);
-    line-height: 1.1;
-    margin: 0 0 0.5em;
-    letter-spacing: -0.01em;
-  }
-  h2 { font-size: clamp(30px, 4vw, 42px); font-weight: 700; color: var(--navy); }
-  h3 { font-size: 22px; font-weight: 600; color: var(--navy); }
-  p { margin: 0 0 1em; }
+  h1, h2, h3 { margin: 0; line-height: 1; font-weight: 800; color: var(--ink); }
+  p { margin: 0; }
   a { color: inherit; }
-  :focus-visible { outline: 3px solid var(--brass); outline-offset: 2px; }
+  :focus-visible { outline: 3px solid var(--brass); outline-offset: 3px; }
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 28px; }
 
-  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
-  .lede { font-size: 19px; color: var(--muted); max-width: 62ch; }
+  /* Display type: wide, heavy, tight */
+  .display { font-stretch: 125%; font-variation-settings: 'wdth' 125; letter-spacing: -0.025em; }
+  .section-title { font-size: clamp(34px, 5vw, 60px); line-height: .98; max-width: 16ch; }
+  .section-sub { font-size: 19px; color: var(--muted); margin-top: 18px; max-width: 48ch; }
 
   /* Buttons */
   .btn {
-    display: inline-block;
-    font-family: var(--head);
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    padding: 13px 24px;
-    border-radius: 4px;
-    border: 2px solid transparent;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color .15s, border-color .15s, color .15s;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--font); font-size: 17px; font-weight: 700;
+    padding: 15px 26px; border-radius: 3px; border: 2px solid transparent;
+    text-decoration: none; cursor: pointer; transition: background-color .15s, border-color .15s;
   }
-  .btn-brass { background: var(--brass); color: var(--navy); }
-  .btn-brass:hover { background: #D8B464; }
-  .btn-outline { border-color: rgba(247,245,240,.55); color: var(--paper); background: transparent; }
-  .btn-outline:hover { border-color: var(--paper); }
+  .btn-brass { background: var(--brass); color: var(--ink); }
+  .btn-brass:hover { background: #D6B15C; }
+  .btn-ghost { border-color: rgba(255,255,255,.35); color: var(--white); background: transparent; }
+  .btn-ghost:hover { border-color: var(--white); }
   .btn[disabled] { opacity: .6; cursor: wait; }
 
   /* Header */
-  .site-header { background: var(--navy); color: var(--paper); }
-  .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-  .brand {
-    display: flex; align-items: center; gap: 10px;
-    font-family: var(--head); font-weight: 700; font-size: 22px;
-    text-decoration: none; color: var(--paper);
-  }
-  .brand svg { width: 28px; height: 28px; }
-  .nav { display: flex; align-items: center; gap: 28px; }
-  .nav a.link { text-decoration: none; font-weight: 500; color: rgba(247,245,240,.8); }
-  .nav a.link:hover { color: var(--paper); }
-  .nav .btn { padding: 8px 18px; font-size: 16px; }
+  .site-header { position: absolute; top: 0; left: 0; right: 0; z-index: 5; }
+  .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--white); text-decoration: none; font-weight: 800; font-size: 20px; font-variation-settings: 'wdth' 112; }
+  .brand svg { width: 26px; height: 26px; }
+  .nav { display: flex; align-items: center; gap: 30px; }
+  .nav a.link { color: rgba(255,255,255,.72); text-decoration: none; font-weight: 500; font-size: 16px; }
+  .nav a.link:hover { color: var(--white); }
+  .nav .btn { padding: 10px 18px; font-size: 15px; }
 
   /* Hero */
-  .hero { background: var(--navy); color: var(--paper); padding: 72px 0 40px; overflow: hidden; }
-  .hero-kicker { font-weight: 500; color: var(--brass); margin-bottom: 18px; font-size: 17px; }
-  .hero h1 {
-    font-size: clamp(42px, 7vw, 80px);
-    font-weight: 700;
-    color: var(--paper);
-    max-width: 16ch;
-    margin-bottom: 24px;
-  }
-  .hero .lede { color: rgba(247,245,240,.78); font-size: 20px; max-width: 56ch; }
-  .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin: 32px 0 14px; }
-  .hero-note { font-size: 15px; color: rgba(247,245,240,.6); }
+  .hero { position: relative; background: var(--ink); color: var(--white); overflow: hidden; padding: 160px 0 100px; }
+  .topo { position: absolute; inset: 0; color: rgba(200,160,74,.09); pointer-events: none; }
+  .topo svg { width: 100%; height: 100%; display: block; }
+  .hero .wrap { position: relative; }
+  .hero-kicker { color: var(--brass); font-weight: 600; font-size: 17px; margin-bottom: 20px; }
+  .hero h1 { color: var(--white); font-size: clamp(38px, 5.4vw, 72px); line-height: 1.02; max-width: 17ch; font-variation-settings: 'wdth' 112; letter-spacing: -0.02em; }
+  .hero-sub { font-size: 20px; color: rgba(255,255,255,.78); margin-top: 24px; max-width: 46ch; line-height: 1.5; }
+  .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 56px; max-width: 900px; }
+  .choice { border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 6px; }
+  .choice-main { background: var(--white); color: var(--text); }
+  .choice-alt { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.22); color: var(--white); }
+  .choice-who { font-size: 15px; font-weight: 600; }
+  .choice-main .choice-who { color: var(--olive); }
+  .choice-alt .choice-who { color: var(--brass); }
+  .choice h2 { font-size: 26px; line-height: 1.15; font-variation-settings: 'wdth' 108; }
+  .choice-main h2 { color: var(--ink); }
+  .choice-alt h2 { color: var(--white); }
+  .choice p { font-size: 16px; margin-top: 2px; }
+  .choice-main p { color: var(--muted); }
+  .choice-alt p { color: rgba(255,255,255,.75); }
+  .choice .btn { margin-top: 20px; align-self: flex-start; }
+  .btn-ink { background: var(--ink); color: var(--white); }
+  .btn-ink:hover { background: var(--navy); }
 
-  .route { margin-top: 48px; }
-  .route svg { width: 100%; height: auto; display: block; }
-  .route .trail { fill: none; stroke: rgba(247,245,240,.22); stroke-width: 3; stroke-dasharray: 2 12; stroke-linecap: round; }
-  .route .march { fill: none; stroke: var(--brass); stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 1400; stroke-dashoffset: 1400; animation: march 2.6s .4s ease-out forwards; }
-  .route .stop { fill: var(--navy); stroke: var(--brass); stroke-width: 3; }
-  .route .label { fill: rgba(247,245,240,.75); font-family: var(--head); font-size: 24px; font-weight: 600; }
-  .route .icon { fill: none; stroke: var(--paper); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
-  .route .icon-brass { stroke: var(--brass); }
-  @keyframes march { to { stroke-dashoffset: 0; } }
-  @media (prefers-reduced-motion: reduce) {
-    .route .march { animation: none; stroke-dashoffset: 0; }
-    html { scroll-behavior: auto; }
-  }
-
-  /* Sections */
-  section.block { padding: 88px 0; }
-  .block-white { background: var(--white); }
-
-  .gap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-  .gap-list { list-style: none; margin: 0; padding: 0; }
-  .gap-list li { border-left: 3px solid var(--olive); padding: 4px 0 4px 20px; margin-bottom: 28px; }
-  .gap-list li:last-child { margin-bottom: 0; }
-  .gap-list h3 { margin-bottom: 6px; }
-  .gap-list p { margin: 0; color: var(--muted); }
-
-  .help-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 48px; margin-top: 44px; }
-  .help-item h3 { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-  .help-item h3::before { content: ''; width: 10px; height: 10px; background: var(--brass); flex: none; transform: rotate(45deg); }
-  .help-item p { color: var(--muted); margin: 0; }
-
-  .landing { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--line); }
-  .landing p { font-weight: 600; color: var(--navy); margin-bottom: 12px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; margin: 0; padding: 0; }
-  .chips li { background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: 15px; font-weight: 500; }
-
-  .steps { list-style: none; margin: 44px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; counter-reset: step; position: relative; }
-  .steps::before { content: ''; position: absolute; top: 22px; left: 22px; right: 22px; border-top: 3px dotted var(--line); }
-  .steps li { position: relative; counter-increment: step; }
-  .steps li::before {
-    content: counter(step);
-    display: grid; place-items: center;
-    width: 46px; height: 46px; border-radius: 50%;
-    background: var(--navy); color: var(--brass);
-    font-family: var(--head); font-weight: 700; font-size: 22px;
-    margin-bottom: 18px; position: relative;
-  }
-  .steps p { color: var(--muted); margin: 0; }
-
-  .mentor-band { background: var(--navy-2); color: var(--paper); padding: 72px 0; }
-  .mentor-band .wrap { display: flex; gap: 40px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
-  .mentor-band h2 { color: var(--paper); }
-  .mentor-band p { color: rgba(247,245,240,.78); max-width: 58ch; margin: 0; font-size: 18px; }
-
-  .about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 56px; align-items: start; }
-  .independent { border-left: 3px solid var(--olive); padding-left: 20px; color: var(--muted); font-size: 16px; }
+  /* Services */
+  .services { padding: 110px 0; background: var(--white); }
+  .services-grid { list-style: none; margin: 56px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 48px; }
+  .services-grid li { padding: 28px 0; border-top: 1px solid var(--line); }
+  .services-grid h3 { font-size: 22px; font-variation-settings: 'wdth' 108; display: flex; align-items: center; gap: 12px; color: var(--ink); }
+  .services-grid h3::before { content: ''; width: 9px; height: 9px; background: var(--brass); transform: rotate(45deg); flex: none; }
+  .services-grid p { margin-top: 10px; color: var(--muted); font-size: 16px; max-width: 32ch; }
 
   /* Registration */
-  .register { background: var(--paper); }
-  .panel { background: var(--white); border: 1px solid var(--line); border-radius: 8px; margin-top: 36px; }
+  .register { background: var(--field); padding: 110px 0; }
+  .panel { background: var(--white); border-radius: 6px; margin-top: 44px; box-shadow: 0 1px 0 var(--line), 0 18px 40px rgba(12,27,46,.08); }
   .tabs { display: flex; border-bottom: 1px solid var(--line); }
   .tab {
-    flex: 1; background: none; border: 0; padding: 18px 16px;
-    font-family: var(--head); font-size: 19px; font-weight: 600; color: var(--muted);
-    cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -1px;
+    flex: 1; background: none; border: 0; padding: 20px 16px; cursor: pointer;
+    font-family: var(--font); font-size: 18px; font-weight: 700; color: var(--muted);
+    border-bottom: 3px solid transparent; margin-bottom: -1px;
   }
-  .tab[aria-selected="true"] { color: var(--navy); border-bottom-color: var(--brass); }
-  .tab-panel { padding: 32px; }
+  .tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--brass); }
+  .tab-panel { padding: 36px; }
   .tab-panel[hidden] { display: none; }
-  .form-note { background: var(--paper); border-left: 3px solid var(--olive); padding: 12px 16px; font-size: 15px; color: var(--muted); margin-bottom: 28px; }
-
+  .form-note { background: var(--field); border-left: 3px solid var(--olive); padding: 12px 16px; font-size: 15px; color: var(--muted); margin-bottom: 28px; }
   .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 24px; }
   .field { display: flex; flex-direction: column; gap: 6px; }
   .field.full { grid-column: 1 / -1; }
-  label, legend { font-weight: 600; font-size: 15px; color: var(--navy); }
+  label, legend { font-weight: 700; font-size: 15px; color: var(--ink); }
   .opt { font-weight: 400; color: var(--muted); }
-  input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="month"], select, textarea {
-    font: inherit; font-size: 16px;
-    padding: 11px 12px;
-    border: 1px solid #C9C3B5; border-radius: 4px;
-    background: var(--white); color: var(--ink);
-    width: 100%;
-    min-height: 46px;
+  input[type="text"], input[type="email"], input[type="tel"], input[type="date"], select, textarea {
+    font: inherit; font-size: 16px; padding: 11px 12px; min-height: 46px; width: 100%;
+    border: 1px solid #BFC6BD; border-radius: 3px; background: var(--white); color: var(--text);
   }
   textarea { min-height: 96px; resize: vertical; }
-  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--navy); box-shadow: 0 0 0 3px rgba(201,162,77,.35); }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--ink); box-shadow: 0 0 0 3px rgba(200,160,74,.35); }
   fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
   legend { margin-bottom: 10px; padding: 0; }
   .toggles { display: flex; flex-wrap: wrap; gap: 8px; }
   .toggle { position: relative; }
   .toggle input { position: absolute; opacity: 0; width: 1px; height: 1px; }
-  .toggle span {
-    display: inline-block; padding: 8px 14px; border: 1px solid #C9C3B5; border-radius: 999px;
-    font-size: 15px; font-weight: 500; color: var(--ink); cursor: pointer; user-select: none; background: var(--white);
-  }
-  .toggle input:checked + span { background: var(--navy); border-color: var(--navy); color: var(--paper); }
+  .toggle span { display: inline-block; padding: 8px 14px; border: 1px solid #BFC6BD; border-radius: 999px; font-size: 15px; font-weight: 500; color: var(--text); cursor: pointer; user-select: none; background: var(--white); }
+  .toggle input:checked + span { background: var(--ink); border-color: var(--ink); color: var(--white); }
   .toggle input:focus-visible + span { outline: 3px solid var(--brass); outline-offset: 2px; }
-  .consent { display: flex; gap: 12px; align-items: flex-start; font-weight: 400; color: var(--ink); font-size: 15px; }
-  .consent input { margin-top: 4px; width: 18px; height: 18px; flex: none; accent-color: var(--navy); }
+  .consent { display: flex; gap: 12px; align-items: flex-start; font-weight: 400; color: var(--text); font-size: 15px; }
+  .consent input { margin-top: 4px; width: 18px; height: 18px; flex: none; accent-color: var(--ink); }
   .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-  .form-actions { margin-top: 28px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
-  .form-error { color: var(--error); font-weight: 500; margin: 0; }
-
-  .success { text-align: left; padding: 8px 0; }
-  .success h3 { font-size: 28px; }
-  .reg-id {
-    display: inline-flex; align-items: center; gap: 14px;
-    font-family: var(--head); font-size: 34px; font-weight: 700; color: var(--navy);
-    background: var(--paper); border: 1px dashed var(--brass); border-radius: 6px;
-    padding: 10px 18px; margin: 8px 0 18px;
-  }
-  .copy-btn { font-family: var(--body); font-size: 14px; font-weight: 600; background: none; border: 1px solid var(--line); border-radius: 4px; padding: 6px 10px; cursor: pointer; color: var(--navy); }
-
-  /* FAQ */
-  .faq { max-width: 780px; margin-top: 36px; }
-  .faq details { border-bottom: 1px solid var(--line); }
-  .faq summary {
-    cursor: pointer; list-style: none; padding: 20px 36px 20px 0; position: relative;
-    font-family: var(--head); font-size: 21px; font-weight: 600; color: var(--navy);
-  }
-  .faq summary::-webkit-details-marker { display: none; }
-  .faq summary::after { content: '+'; position: absolute; right: 4px; top: 16px; font-size: 26px; color: var(--brass-ink); }
-  .faq details[open] summary::after { content: '\2212'; }
-  .faq details p { color: var(--muted); padding-bottom: 12px; max-width: 66ch; }
-
-  /* Footer */
-  .site-footer { background: var(--navy); color: rgba(247,245,240,.7); padding: 40px 0; font-size: 15px; }
-  .site-footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-  .site-footer a { color: var(--paper); }
-
+  .form-actions { margin-top: 30px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .form-error { color: var(--error); font-weight: 600; }
   .field-error { color: var(--error); font-size: 14px; margin: 2px 0 0; }
   .field-error:empty { display: none; }
   .field.invalid input:not([type="checkbox"]), .field.invalid select, .field.invalid textarea { border-color: var(--error); }
   .field.invalid .toggle span { border-color: var(--error); }
   .prefix-input { display: flex; }
-  .prefix-input span { display: flex; align-items: center; padding: 0 12px; background: var(--paper); border: 1px solid #C9C3B5; border-right: 0; border-radius: 4px 0 0 4px; font-weight: 600; color: var(--navy); }
-  .prefix-input input { border-radius: 0 4px 4px 0; }
+  .prefix-input span { display: flex; align-items: center; padding: 0 12px; background: var(--field); border: 1px solid #BFC6BD; border-right: 0; border-radius: 3px 0 0 3px; font-weight: 700; color: var(--ink); white-space: nowrap; }
+  .prefix-input input { border-radius: 0 3px 3px 0; }
   .field.invalid .prefix-input span { border-color: var(--error); }
-  .prefix-input span { white-space: nowrap; }
-  .hint { font-size: 14px; color: var(--muted); margin: 0; }
+  .label-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .help-link { background: none; border: 0; padding: 0; font: inherit; font-size: 14px; font-weight: 700; color: var(--brass-ink); text-decoration: underline; cursor: pointer; }
+  .hint { font-size: 14px; color: var(--muted); }
+  .counter { font-size: 13px; color: var(--muted); text-align: right; }
+  .date-input { position: relative; }
+  .date-display { display: flex; align-items: center; justify-content: space-between; min-height: 46px; padding: 11px 12px; font-size: 16px; border: 1px solid #BFC6BD; border-radius: 3px; background: var(--white); color: var(--muted); }
+  .date-display.has-value { color: var(--text); }
+  .date-display::after { content: ''; width: 18px; height: 18px; flex: none; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230C1B2E' stroke-width='2' stroke-linecap='round'%3E%3Crect x='3' y='5' width='18' height='16' rx='2'/%3E%3Cpath d='M3 10h18M8 3v4M16 3v4'/%3E%3C/svg%3E") no-repeat center / contain; }
+  .date-input input[type="date"] { position: absolute; inset: 0; width: 100%; height: 100%; min-height: 0; opacity: 0; cursor: pointer; border: 0; padding: 0; margin: 0; -webkit-appearance: none; appearance: none; }
+  .date-input:focus-within .date-display { border-color: var(--ink); box-shadow: 0 0 0 3px rgba(200,160,74,.35); }
+  .field.invalid .date-display { border-color: var(--error); }
   .file-input { position: relative; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
   .file-input input { position: absolute; opacity: 0; width: 1px; height: 1px; }
-  .file-btn { display: inline-block; padding: 10px 16px; border: 1px solid var(--navy); border-radius: 4px; color: var(--navy); font-weight: 600; font-size: 15px; cursor: pointer; background: var(--white); }
-  .file-btn:hover { background: var(--paper); }
+  .file-btn { display: inline-block; padding: 10px 16px; border: 1px solid var(--ink); border-radius: 3px; color: var(--ink); font-weight: 700; font-size: 15px; cursor: pointer; background: var(--white); }
+  .file-btn:hover { background: var(--field); }
   .file-input input:focus-visible + .file-btn { outline: 3px solid var(--brass); outline-offset: 2px; }
   .file-name { font-size: 15px; color: var(--muted); word-break: break-all; }
-  .file-clear { background: none; border: 0; color: var(--error); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: underline; padding: 0; }
-  .label-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-  .help-link { background: none; border: 0; padding: 0; font: inherit; font-size: 14px; font-weight: 600; color: var(--brass-ink); text-decoration: underline; cursor: pointer; }
-  .date-input { position: relative; }
-  .date-display {
-    display: flex; align-items: center; justify-content: space-between;
-    min-height: 46px; padding: 11px 12px; font-size: 16px;
-    border: 1px solid #C9C3B5; border-radius: 4px; background: var(--white); color: var(--muted);
-  }
-  .date-display.has-value { color: var(--ink); }
-  .date-display::after {
-    content: ''; width: 18px; height: 18px; flex: none;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230B1F3A' stroke-width='2' stroke-linecap='round'%3E%3Crect x='3' y='5' width='18' height='16' rx='2'/%3E%3Cpath d='M3 10h18M8 3v4M16 3v4'/%3E%3C/svg%3E") no-repeat center / contain;
-  }
-  .date-input input[type="date"] {
-    position: absolute; inset: 0; width: 100%; height: 100%; min-height: 0;
-    opacity: 0; cursor: pointer; border: 0; padding: 0; margin: 0;
-    -webkit-appearance: none; appearance: none;
-  }
-  .date-input:focus-within .date-display { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(201,162,77,.35); }
-  .field.invalid .date-display { border-color: var(--error); }
-  .help-dialog {
-    width: min(440px, calc(100% - 32px)); max-height: calc(100% - 48px); overflow: auto;
-    border: 0; border-radius: 10px; padding: 28px 24px 22px; color: var(--ink); background: var(--white);
-    box-shadow: 0 20px 60px rgba(11,31,58,.35);
-  }
-  .help-dialog::backdrop { background: rgba(11,31,58,.55); }
-  .help-dialog h3 { font-size: 24px; margin: 0 32px 14px 0; }
+  .file-clear { background: none; border: 0; color: var(--error); font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; text-decoration: underline; padding: 0; }
+  .success h3 { font-size: 30px; font-variation-settings: 'wdth' 115; margin-bottom: 10px; }
+  .success p { color: var(--muted); }
+  .reg-id { display: inline-flex; align-items: center; gap: 14px; font-size: 34px; font-weight: 800; color: var(--ink); font-variation-settings: 'wdth' 120; background: var(--paper); border: 1px dashed var(--brass); border-radius: 4px; padding: 10px 18px; margin: 12px 0 18px; }
+  .copy-btn { font-family: var(--font); font-size: 14px; font-weight: 700; background: var(--white); border: 1px solid var(--line); border-radius: 3px; padding: 6px 10px; cursor: pointer; color: var(--ink); }
+
+  /* Help pop-up */
+  .help-dialog { width: min(440px, calc(100% - 32px)); max-height: calc(100% - 48px); overflow: auto; border: 0; border-radius: 8px; padding: 28px 24px 22px; color: var(--text); background: var(--white); box-shadow: 0 24px 70px rgba(12,27,46,.4); }
+  .help-dialog::backdrop { background: rgba(12,27,46,.6); }
+  .help-dialog h3 { font-size: 24px; margin: 0 36px 14px 0; font-variation-settings: 'wdth' 112; }
   .help-dialog ol { margin: 0 0 16px; padding-left: 20px; }
   .help-dialog li { margin-bottom: 6px; }
   .help-dialog p { margin: 0 0 12px; }
-  .dialog-sub { font-weight: 600; color: var(--navy); margin-bottom: 6px !important; }
-  .dialog-example { font-size: 14px; color: var(--muted); background: var(--paper); padding: 8px 12px; border-radius: 4px; margin: 4px 0 0 !important; }
-  .dialog-close {
-    position: absolute; top: 10px; right: 10px; width: 40px; height: 40px;
-    border: 0; background: none; font-size: 30px; line-height: 1; color: var(--muted); cursor: pointer; border-radius: 50%;
-  }
-  .dialog-close:hover { background: var(--paper); color: var(--navy); }
-  .counter { font-size: 13px; color: var(--muted); text-align: right; }
+  .dialog-sub { font-weight: 700; color: var(--ink); margin-bottom: 6px !important; }
+  .dialog-example { font-size: 14px; color: var(--muted); background: var(--field); padding: 8px 12px; border-radius: 3px; margin: 4px 0 0 !important; }
+  .dialog-close { position: absolute; top: 10px; right: 10px; width: 40px; height: 40px; border: 0; background: none; font-size: 30px; line-height: 1; color: var(--muted); cursor: pointer; border-radius: 50%; }
+  .dialog-close:hover { background: var(--field); color: var(--ink); }
+
+  /* FAQ */
+  .faq-sec { padding: 110px 0; }
+  .faq-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 64px; align-items: start; }
+  .faq details { border-top: 1px solid var(--line); }
+  .faq details:last-child { border-bottom: 1px solid var(--line); }
+  .faq-sec { background: var(--white); color: var(--text); }
+  .faq summary { cursor: pointer; list-style: none; padding: 22px 40px 22px 0; position: relative; font-size: 19px; font-weight: 700; color: var(--ink); }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: '+'; position: absolute; right: 6px; top: 16px; font-size: 28px; font-weight: 400; color: var(--brass-ink); }
+  .faq details[open] summary::after { content: '\2212'; }
+  .faq details p { color: var(--muted); padding-bottom: 22px; max-width: 64ch; }
+
+  /* Footer */
+  .site-footer { background: var(--ink); color: rgba(255,255,255,.6); padding: 64px 0 48px; font-size: 15px; }
+  .foot-top { display: flex; justify-content: space-between; gap: 32px; flex-wrap: wrap; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,.12); }
+  .foot-top .brand { font-size: 22px; }
+  .foot-about { max-width: 44ch; margin-top: 12px; }
+  .foot-bottom { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 24px; }
+  .site-footer a { color: var(--white); }
 
   /* Responsive */
-  @media (max-width: 900px) {
-    .gap-grid, .about-grid { grid-template-columns: 1fr; gap: 36px; }
-    .help-grid { grid-template-columns: 1fr 1fr; }
-    .steps { grid-template-columns: 1fr 1fr; }
-    .steps::before { display: none; }
+  @media (max-width: 980px) {
+    .faq-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .faq-grid { gap: 32px; }
   }
   @media (max-width: 640px) {
+    .choices { grid-template-columns: 1fr; margin-top: 40px; }
+    .choice { padding: 24px 20px; }
+    .choice .btn { align-self: stretch; }
+    .services-grid { grid-template-columns: 1fr; }
+    .services, .register, .faq-sec { padding: 76px 0; }
     body { font-size: 16px; }
+    .wrap { padding: 0 20px; }
     .nav a.link { display: none; }
-    .hero { padding-top: 48px; }
-    .route .label { display: none; }
-    section.block { padding: 64px 0; }
-    .help-grid, .steps, .form-grid { grid-template-columns: 1fr; }
-    .tab-panel { padding: 22px 18px; }
+    .site-header .wrap { height: 72px; }
+    .hero { padding: 112px 0 72px; }
+    .hero-sub { font-size: 18px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .tab-panel { padding: 24px 18px; }
     .tab { font-size: 16px; padding: 16px 8px; }
-    .hero-actions .btn { width: 100%; text-align: center; }
     .reg-id { font-size: 26px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
   }
 </style>
 </head>
@@ -316,15 +239,11 @@
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Next Posting home">
-      <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 30 L32 17 L50 30 M14 45 L32 32 L50 45" fill="none" stroke="#C9A24D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Next Posting
-    </a>
+    <a class="brand" href="#top" aria-label="Next Posting home"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 30 L32 17 L50 30 M14 45 L32 32 L50 45" fill="none" stroke="#C8A04A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg> Next Posting</a>
     <nav class="nav" aria-label="Main">
-      <a class="link" href="#about">About</a>
-      <a class="link" href="#how">How it works</a>
+      <a class="link" href="#services">What we offer</a>
       <a class="link" href="#faq">FAQ</a>
-      <a class="btn btn-brass" href="#register" data-track="forces">Register</a>
+      <a class="btn btn-brass" href="#register">Register</a>
     </nav>
   </div>
 </header>
@@ -332,123 +251,51 @@
 <main id="top">
 
   <section class="hero">
+    <div class="topo" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M1039 401 L1032 402 L1019 404 L1008 408 L999 412 L993 415 L982 421 L973 427 L967 432 L960 438 L953 444 L947 451 L940 459 L935 466 L931 473 L927 479 L921 492 L918 499 L914 509 L911 518 L909 531 L907 540 L907 550 L907 563 L908 570 L910 583 L914 596 L917 602 L921 609 L927 619 L934 626 L940 631 L947 635 L960 639 L973 640 L986 639 L999 635 L1006 632 L1014 628 L1025 622 L1032 616 L1039 611 L1045 605 L1052 598 L1059 591 L1065 584 L1071 576 L1076 570 L1080 563 L1085 557 L1092 545 L1096 537 L1099 531 L1104 518 L1107 512 L1110 499 L1112 492 L1114 479 L1114 466 L1113 453 L1111 445 L1107 434 L1103 427 L1098 421 L1091 414 L1081 408 L1072 404 L1060 401 L1052 401 L1039 401"/><path d="M1052 317 L1045 318 L1032 320 L1019 323 L1013 325 L999 329 L993 332 L981 337 L973 340 L967 344 L956 350 L947 355 L940 359 L934 364 L927 369 L919 376 L912 382 L905 388 L899 395 L893 401 L887 408 L881 415 L875 424 L868 434 L864 440 L860 447 L855 457 L850 466 L847 473 L842 486 L840 492 L836 505 L834 512 L831 524 L829 537 L828 544 L827 557 L827 570 L827 583 L828 596 L828 603 L830 615 L833 628 L835 637 L838 647 L842 657 L846 667 L849 673 L855 685 L860 693 L864 699 L869 706 L875 713 L881 719 L888 725 L896 732 L907 738 L914 741 L924 745 L934 747 L947 748 L960 747 L970 745 L980 742 L989 738 L999 733 L1006 729 L1013 725 L1022 719 L1031 712 L1039 706 L1045 700 L1052 694 L1059 687 L1065 680 L1072 673 L1077 667 L1083 660 L1088 654 L1094 647 L1099 641 L1105 633 L1111 624 L1118 615 L1122 609 L1126 602 L1131 595 L1138 584 L1142 576 L1146 570 L1151 561 L1156 550 L1160 544 L1164 535 L1168 524 L1171 518 L1176 505 L1178 499 L1182 486 L1184 479 L1186 466 L1189 453 L1190 440 L1190 427 L1189 414 L1187 401 L1184 390 L1181 382 L1177 374 L1170 363 L1165 356 L1159 350 L1152 343 L1144 338 L1138 333 L1131 330 L1118 324 L1111 322 L1098 319 L1085 317 L1078 317 L1065 316 L1052 317"/><path d="M0 39 L13 41 L26 43 L39 44 L53 45 L59 46 L72 46 L85 47 L99 46 L112 46 L121 45 L132 44 L145 43 L158 40 L166 39 L178 36 L190 32 L197 30 L207 26 L217 21 L224 18 L232 13 L242 6 L250 0"/><path d="M1032 259 L1026 260 L1013 263 L1005 265 L993 269 L985 272 L973 276 L967 279 L954 285 L947 288 L940 292 L930 298 L921 303 L914 308 L907 312 L900 317 L891 324 L883 330 L876 337 L869 343 L862 350 L856 356 L850 363 L844 369 L839 376 L833 382 L828 389 L822 398 L816 408 L812 414 L808 421 L802 432 L798 440 L795 447 L790 460 L788 466 L783 479 L781 486 L778 499 L776 508 L774 518 L772 531 L770 544 L769 557 L769 563 L769 576 L769 589 L770 596 L771 609 L772 622 L774 635 L776 643 L778 654 L782 667 L784 673 L788 686 L790 693 L795 706 L798 712 L802 722 L807 732 L810 738 L815 748 L821 758 L826 764 L830 771 L835 777 L842 785 L848 793 L855 800 L861 806 L868 811 L875 816 L885 822 L894 827 L901 830 L914 834 L925 835 L934 836 L942 835 L953 834 L967 830 L973 828 L985 822 L993 818 L999 814 L1007 809 L1016 803 L1024 796 L1031 790 L1038 783 L1045 777 L1051 771 L1057 764 L1063 758 L1069 751 L1075 745 L1080 738 L1085 732 L1092 724 L1098 716 L1105 707 L1110 699 L1115 693 L1120 686 L1125 680 L1131 671 L1138 661 L1142 654 L1147 647 L1151 641 L1157 631 L1163 622 L1167 615 L1171 609 L1177 598 L1182 589 L1186 583 L1190 575 L1196 563 L1200 557 L1203 549 L1209 537 L1212 531 L1216 521 L1220 512 L1223 504 L1227 492 L1230 486 L1234 473 L1236 463 L1239 453 L1241 440 L1243 428 L1244 421 L1244 408 L1244 395 L1243 382 L1242 376 L1240 363 L1236 351 L1233 343 L1230 335 L1224 324 L1219 317 L1215 311 L1209 304 L1203 298 L1196 291 L1187 285 L1178 278 L1170 274 L1164 271 L1151 266 L1144 263 L1131 260 L1124 258 L1111 256 L1098 255 L1085 254 L1072 254 L1059 255 L1045 257 L1032 259"/><path d="M0 78 L13 80 L26 82 L39 83 L47 84 L59 85 L72 86 L85 87 L99 88 L112 88 L125 88 L138 87 L151 87 L164 86 L178 84 L184 84 L197 81 L210 79 L217 77 L230 74 L238 71 L250 67 L256 65 L270 59 L276 55 L283 52 L293 45 L302 39 L309 33 L316 27 L322 21 L329 14 L334 6 L339 0"/><path d="M994 900 L1003 894 L1011 887 L1018 881 L1025 874 L1032 868 L1038 861 L1044 855 L1050 848 L1055 842 L1060 835 L1066 829 L1072 821 L1078 812 L1085 803 L1090 796 L1095 790 L1099 783 L1105 776 L1111 766 L1117 758 L1121 751 L1126 745 L1131 737 L1138 727 L1143 719 L1147 712 L1151 706 L1157 696 L1163 686 L1167 680 L1171 673 L1177 664 L1183 654 L1187 647 L1191 641 L1197 631 L1202 622 L1206 615 L1210 609 L1216 597 L1221 589 L1224 583 L1230 573 L1235 563 L1238 557 L1243 547 L1247 537 L1250 531 L1256 519 L1259 512 L1262 503 L1267 492 L1269 486 L1274 473 L1276 466 L1280 453 L1282 444 L1285 434 L1287 421 L1289 410 L1290 401 L1291 388 L1291 376 L1291 363 L1289 350 L1288 343 L1286 330 L1282 318 L1280 311 L1276 301 L1271 291 L1267 285 L1262 277 L1256 268 L1249 260 L1243 253 L1236 247 L1230 242 L1223 237 L1216 232 L1208 227 L1197 220 L1190 217 L1182 214 L1170 210 L1163 207 L1151 204 L1138 201 L1131 200 L1118 199 L1105 198 L1092 197 L1078 198 L1065 198 L1052 200 L1045 201 L1032 203 L1019 206 L1012 207 L999 211 L989 214 L980 217 L970 220 L960 224 L953 227 L940 232 L934 235 L924 240 L914 245 L907 249 L900 253 L890 259 L881 264 L875 269 L868 274 L861 278 L853 285 L845 291 L837 298 L830 304 L823 311 L817 317 L811 324 L805 330 L800 337 L794 343 L789 350 L782 359 L776 369 L772 376 L768 382 L763 391 L757 401 L754 408 L750 418 L746 427 L743 434 L739 447 L736 454 L733 466 L730 477 L728 486 L725 499 L723 511 L722 518 L721 531 L720 544 L720 557 L719 570 L720 583 L721 596 L722 609 L723 620 L725 628 L727 641 L729 654 L731 660 L734 673 L736 682 L740 693 L743 703 L746 712 L750 722 L753 732 L756 739 L761 751 L764 758 L769 770 L773 777 L776 783 L782 796 L786 803 L790 809 L796 819 L801 829 L806 835 L810 842 L815 849 L822 858 L828 866 L835 873 L842 880 L848 887 L855 892 L861 898"/><path d="M0 112 L13 114 L26 116 L33 117 L46 118 L59 119 L72 121 L85 122 L99 123 L105 123 L118 124 L132 125 L145 125 L158 125 L171 125 L184 124 L197 124 L205 123 L217 122 L230 120 L243 118 L252 117 L263 114 L276 111 L283 109 L296 105 L302 102 L315 97 L322 94 L329 91 L341 84 L348 79 L355 75 L362 70 L368 65 L375 58 L382 52 L388 45 L395 37 L401 28 L407 19 L410 13 L414 6"/><path d="M1073 900 L1078 891 L1085 881 L1089 874 L1093 868 L1098 859 L1105 848 L1109 842 L1112 835 L1118 826 L1124 816 L1128 809 L1131 803 L1138 792 L1143 783 L1147 777 L1151 770 L1157 759 L1162 751 L1165 745 L1170 736 L1177 725 L1180 719 L1184 712 L1190 702 L1196 693 L1199 686 L1203 680 L1210 668 L1214 660 L1218 654 L1223 646 L1229 635 L1233 628 L1237 622 L1243 611 L1248 602 L1251 596 L1256 587 L1262 576 L1265 570 L1269 562 L1275 550 L1278 544 L1282 536 L1288 524 L1291 518 L1295 508 L1299 499 L1302 492 L1307 479 L1310 473 L1314 460 L1316 453 L1320 440 L1322 434 L1326 421 L1328 410 L1330 401 L1332 388 L1333 376 L1334 363 L1335 350 L1334 337 L1333 324 L1331 311 L1328 298 L1327 291 L1322 278 L1320 272 L1315 261 L1311 253 L1307 246 L1302 238 L1295 228 L1289 220 L1283 214 L1277 207 L1270 201 L1263 194 L1256 189 L1249 184 L1243 179 L1235 175 L1224 168 L1216 165 L1210 162 L1197 157 L1190 154 L1177 150 L1170 149 L1157 146 L1144 143 L1137 142 L1124 141 L1111 140 L1098 140 L1085 141 L1072 141 L1061 142 L1052 143 L1039 145 L1026 148 L1019 149 L1006 152 L993 155 L986 157 L973 161 L967 163 L953 168 L947 170 L936 175 L927 178 L920 181 L907 187 L901 190 L893 194 L881 200 L875 204 L868 208 L857 214 L848 219 L842 224 L835 228 L828 233 L819 240 L811 246 L803 253 L796 259 L789 265 L782 271 L776 277 L769 284 L763 291 L757 298 L752 304 L747 311 L742 317 L736 326 L730 336 L726 343 L722 350 L717 360 L712 369 L709 376 L704 388 L701 395 L697 406 L694 414 L690 426 L688 434 L685 447 L684 453 L681 466 L679 479 L677 489 L676 499 L675 512 L674 524 L674 537 L674 550 L674 563 L675 576 L676 589 L677 600 L678 609 L680 622 L683 635 L684 641 L687 654 L690 667 L692 673 L696 686 L698 693 L702 706 L704 712 L708 725 L711 732 L715 745 L718 751 L723 764 L725 771 L730 782 L733 790 L736 798 L742 809 L744 816 L750 827 L753 835 L756 842 L762 855 L766 861 L769 868 L776 881 L779 887 L783 894"/><path d="M0 143 L13 145 L26 146 L39 148 L46 149 L59 151 L72 152 L85 154 L99 155 L105 156 L118 157 L132 158 L145 159 L158 160 L171 161 L184 161 L197 161 L210 161 L224 161 L237 161 L250 160 L263 159 L276 158 L289 156 L296 155 L309 153 L322 150 L329 149 L342 146 L353 142 L362 140 L372 136 L381 132 L388 129 L401 123 L408 119 L414 115 L422 110 L431 104 L439 97 L446 91 L452 84 L458 78 L463 71 L468 65 L473 57 L480 45 L483 39 L487 32 L492 19 L494 13 L498 0"/><path d="M1122 900 L1125 894 L1131 881 L1134 874 L1138 867 L1143 855 L1147 848 L1151 840 L1156 829 L1159 822 L1164 813 L1169 803 L1172 796 L1177 787 L1182 777 L1186 771 L1190 762 L1196 751 L1199 745 L1203 737 L1210 725 L1213 719 L1217 712 L1223 701 L1228 693 L1231 686 L1236 678 L1242 667 L1246 660 L1250 654 L1256 643 L1260 635 L1264 628 L1269 619 L1275 609 L1279 602 L1282 596 L1289 584 L1293 576 L1296 570 L1302 559 L1306 550 L1310 544 L1315 533 L1320 524 L1323 518 L1328 506 L1332 499 L1335 492 L1340 479 L1343 473 L1348 460 L1351 453 L1355 443 L1358 434 L1361 423 L1364 414 L1367 401 L1369 395 L1371 382 L1374 369 L1374 363 L1376 350 L1377 337 L1377 324 L1377 311 L1376 298 L1374 286 L1373 278 L1370 265 L1368 256 L1365 246 L1361 236 L1357 227 L1354 220 L1348 208 L1343 201 L1339 194 L1335 187 L1328 178 L1322 170 L1315 163 L1308 156 L1302 149 L1295 143 L1289 138 L1282 133 L1276 128 L1269 123 L1258 117 L1249 111 L1243 108 L1234 104 L1223 99 L1216 96 L1203 91 L1197 89 L1184 86 L1177 84 L1164 82 L1151 80 L1138 78 L1131 78 L1118 77 L1105 77 L1092 77 L1083 78 L1072 79 L1059 80 L1045 82 L1032 84 L1026 85 L1013 88 L1002 91 L993 93 L980 96 L973 98 L960 102 L953 105 L940 109 L934 111 L921 116 L914 119 L903 123 L894 127 L887 129 L875 135 L868 138 L859 142 L848 148 L842 151 L833 155 L822 161 L815 165 L809 169 L799 175 L789 181 L782 185 L776 190 L769 194 L761 201 L753 207 L745 214 L737 220 L730 227 L724 233 L718 240 L712 246 L706 253 L701 259 L696 265 L690 274 L684 284 L680 291 L676 298 L671 309 L667 317 L664 324 L659 337 L656 343 L652 356 L650 363 L646 376 L644 383 L642 395 L639 408 L638 414 L635 427 L633 440 L632 453 L631 460 L630 473 L629 486 L629 499 L628 512 L629 524 L629 537 L630 550 L631 563 L632 570 L634 583 L636 596 L638 607 L639 615 L642 628 L644 637 L647 647 L651 660 L653 667 L657 680 L659 686 L663 699 L665 706 L670 719 L672 725 L676 738 L679 745 L684 758 L686 764 L690 775 L693 783 L697 793 L701 803 L704 810 L709 822 L711 829 L716 842 L719 848 L723 860 L726 868 L730 876 L734 887 L737 894"/><path d="M1049 0 L1039 2 L1026 5 L1019 6 L1006 10 L994 13 L986 15 L973 19 L967 21 L953 25 L947 27 L934 32 L927 34 L914 38 L907 41 L894 45 L888 48 L876 52 L868 55 L858 58 L848 62 L841 65 L828 69 L822 72 L809 77 L802 79 L789 84 L782 86 L770 91 L763 93 L751 97 L743 100 L732 104 L723 107 L713 110 L704 113 L691 117 L684 119 L671 122 L664 124 L651 126 L638 127 L625 125 L618 121 L612 111 L609 104 L607 91 L605 78 L605 71 L604 58 L603 45 L603 32 L602 19 L602 6"/><path d="M0 171 L13 173 L24 175 L33 176 L46 178 L59 180 L69 181 L79 183 L92 185 L105 186 L116 188 L125 189 L138 190 L151 192 L164 193 L172 194 L184 195 L197 197 L210 198 L224 199 L237 199 L250 200 L263 201 L270 201 L283 201 L296 201 L309 201 L322 201 L335 201 L342 200 L355 200 L368 199 L381 198 L395 197 L408 196 L421 194 L427 194 L441 192 L454 190 L467 188 L473 187 L487 185 L500 183 L513 182 L519 181 L533 179 L546 178 L559 179 L566 181 L574 188 L579 196 L582 207 L583 220 L584 233 L584 246 L584 259 L584 272 L584 285 L583 298 L583 311 L583 324 L582 337 L582 350 L581 363 L581 376 L580 388 L580 401 L580 414 L579 427 L579 440 L580 453 L580 466 L580 479 L581 492 L582 505 L583 518 L585 531 L585 537 L587 550 L590 563 L592 575 L593 583 L596 596 L598 603 L601 615 L605 628 L607 635 L611 647 L613 654 L618 667 L620 673 L624 686 L627 693 L631 705 L634 712 L638 722 L641 732 L644 740 L649 751 L651 758 L656 771 L659 777 L664 790 L666 796 L671 809 L673 816 L677 826 L681 835 L684 845 L687 855 L690 863 L694 874 L697 883 L701 894"/><path d="M1161 900 L1164 893 L1169 881 L1171 874 L1177 861 L1179 855 L1184 844 L1187 835 L1190 829 L1196 816 L1199 809 L1203 800 L1208 790 L1211 783 L1216 772 L1220 764 L1224 758 L1230 746 L1233 738 L1237 732 L1243 720 L1247 712 L1250 706 L1256 696 L1261 686 L1264 680 L1269 671 L1275 660 L1279 654 L1282 647 L1289 636 L1293 628 L1297 622 L1302 612 L1308 602 L1311 596 L1315 589 L1322 577 L1326 570 L1329 563 L1335 553 L1340 544 L1343 537 L1348 528 L1353 518 L1357 512 L1361 502 L1366 492 L1369 486 L1374 475 L1378 466 L1381 460 L1386 447 L1389 440 L1394 427 L1396 421 L1401 408 L1403 401 L1407 388 L1408 382 L1412 369 L1414 359 L1416 350 L1418 337 L1419 324 L1420 311 L1420 304 L1421 291 L1420 279 L1420 272 L1419 259 L1417 246 L1414 233 L1413 227 L1409 214 L1407 207 L1402 194 L1400 188 L1394 175 L1391 168 L1387 161 L1381 149 L1377 142 L1372 136 L1368 129 L1361 120 L1355 111 L1348 104 L1342 97 L1336 91 L1330 84 L1324 78 L1317 71 L1309 65 L1302 59 L1295 54 L1289 49 L1282 44 L1274 39 L1264 32 L1256 28 L1249 24 L1239 19 L1230 15 L1223 12 L1210 7 L1203 5 L1190 2"/><path d="M1440 123 L1437 117 L1433 108 L1429 97 L1426 91 L1420 80 L1416 71 L1412 65 L1407 56 L1401 45 L1398 39 L1394 32 L1387 22 L1382 13 L1378 6 L1374 0"/><path d="M0 199 L12 201 L20 202 L33 204 L46 206 L53 207 L66 209 L79 212 L92 214 L99 215 L112 217 L125 219 L132 220 L145 222 L158 225 L170 227 L178 228 L191 230 L204 232 L211 233 L224 235 L237 237 L250 239 L256 240 L270 242 L283 244 L296 246 L302 247 L316 249 L329 251 L337 253 L348 255 L362 257 L371 259 L381 261 L395 265 L401 267 L414 271 L421 273 L432 278 L441 283 L447 286 L455 291 L463 298 L470 304 L477 311 L482 317 L487 324 L493 335 L497 343 L500 350 L505 363 L508 369 L511 382 L513 388 L516 401 L519 414 L520 421 L523 434 L525 447 L526 453 L528 466 L530 479 L533 491 L534 499 L536 512 L539 524 L541 531 L544 544 L546 553 L548 563 L552 576 L554 583 L558 596 L560 602 L565 615 L567 622 L572 635 L574 641 L579 653 L582 660 L585 669 L589 680 L592 686 L598 699 L600 706 L605 717 L608 725 L612 733 L616 745 L619 751 L624 764 L627 771 L631 781 L635 790 L638 798 L642 809 L644 816 L649 829 L651 835 L656 848 L658 855 L662 868 L664 874 L668 887 L671 896"/><path d="M1196 900 L1198 894 L1202 881 L1204 874 L1209 861 L1211 855 L1216 842 L1219 835 L1223 824 L1226 816 L1230 808 L1235 796 L1238 790 L1243 778 L1246 771 L1249 764 L1256 751 L1259 745 L1262 737 L1268 725 L1272 719 L1276 711 L1282 699 L1285 693 L1289 686 L1295 674 L1299 667 L1303 660 L1308 650 L1314 641 L1317 635 L1322 627 L1328 615 L1332 609 L1336 602 L1341 592 L1347 583 L1350 576 L1355 569 L1361 558 L1365 550 L1369 544 L1374 534 L1380 524 L1383 518 L1387 510 L1393 499 L1397 492 L1401 485 L1407 473 L1410 466 L1414 458 L1419 447 L1422 440 L1427 429 L1430 421 L1433 413 L1438 401"/><path d="M0 226 L7 227 L20 229 L33 231 L42 233 L53 235 L66 237 L77 240 L85 241 L99 244 L109 246 L118 248 L132 251 L140 253 L151 255 L164 258 L171 259 L184 262 L197 265 L204 267 L217 270 L225 272 L237 275 L250 278 L256 280 L270 284 L276 286 L289 289 L296 291 L309 296 L316 298 L329 303 L335 306 L348 311 L355 314 L362 317 L373 324 L381 329 L388 333 L395 338 L401 343 L409 350 L415 356 L421 363 L427 370 L434 378 L441 388 L445 395 L448 401 L454 412 L458 421 L460 427 L466 440 L468 447 L473 460 L475 466 L479 479 L481 486 L485 499 L487 505 L491 518 L494 524 L498 537 L500 544 L505 557 L507 563 L512 576 L515 583 L519 595 L522 602 L526 610 L531 622 L534 628 L539 640 L543 647 L546 654 L552 667 L555 673 L559 682 L564 693 L567 699 L572 709 L576 719 L579 725 L585 738 L588 745 L592 752 L597 764 L600 771 L605 783 L608 790 L612 799 L616 809 L618 816 L623 829 L625 835 L629 848 L632 855 L636 868 L638 875 L641 887 L644 899"/><path d="M1227 900 L1230 891 L1233 881 L1236 869 L1239 861 L1243 849 L1245 842 L1249 831 L1252 822 L1256 813 L1260 803 L1263 796 L1268 783 L1271 777 L1276 766 L1280 758 L1283 751 L1289 738 L1292 732 L1295 725 L1302 712 L1305 706 L1308 699 L1315 687 L1319 680 L1322 673 L1328 663 L1333 654 L1337 647 L1341 640 L1348 628 L1352 622 L1355 615 L1361 605 L1367 596 L1371 589 L1375 583 L1381 572 L1386 563 L1390 557 L1394 550 L1401 539 L1405 531 L1409 524 L1414 516 L1420 505 L1424 499 L1428 492 L1433 482 L1438 473"/><path d="M0 253 L13 255 L26 258 L33 259 L46 262 L59 264 L66 266 L79 269 L92 272 L99 273 L112 277 L119 278 L132 282 L143 285 L151 287 L164 291 L171 293 L184 297 L191 299 L204 303 L210 305 L224 310 L230 312 L243 317 L250 320 L260 324 L270 328 L276 331 L289 337 L296 340 L302 344 L313 350 L322 356 L329 360 L335 365 L342 369 L350 376 L357 382 L364 388 L370 395 L376 401 L382 408 L388 416 L395 425 L400 434 L404 440 L408 447 L414 458 L419 466 L422 473 L427 484 L431 492 L434 499 L440 512 L443 518 L447 526 L452 537 L455 544 L460 555 L464 563 L468 570 L473 582 L477 589 L481 596 L487 607 L491 615 L494 622 L500 631 L505 641 L509 647 L513 655 L519 667 L523 673 L527 680 L533 690 L537 699 L541 706 L546 715 L551 725 L555 732 L559 740 L564 751 L568 758 L572 767 L577 777 L580 783 L585 796 L588 803 L592 812 L596 822 L598 829 L603 842 L605 848 L609 861 L612 869 L615 881 L618 893 L620 900"/><path d="M1256 900 L1260 887 L1262 876 L1265 868 L1269 855 L1271 848 L1275 835 L1277 829 L1282 816 L1284 809 L1289 798 L1292 790 L1295 782 L1300 771 L1303 764 L1308 752 L1312 745 L1315 738 L1321 725 L1324 719 L1328 711 L1334 699 L1338 693 L1341 686 L1348 674 L1352 667 L1356 660 L1361 651 L1367 641 L1371 635 L1375 628 L1381 618 L1386 609 L1390 602 L1394 596 L1401 585 L1406 576 L1410 570 L1414 563 L1420 554 L1426 544 L1431 537 L1435 531 L1440 522"/><path d="M0 281 L13 283 L22 285 L33 287 L46 290 L53 292 L66 295 L77 298 L85 300 L99 304 L105 306 L118 310 L125 312 L138 316 L145 318 L158 323 L164 326 L176 330 L184 333 L192 337 L204 342 L210 345 L221 350 L230 354 L237 358 L246 363 L256 369 L263 373 L270 377 L277 382 L286 388 L294 395 L302 401 L309 407 L316 413 L322 420 L329 427 L335 434 L340 440 L346 447 L351 453 L355 460 L362 469 L368 479 L373 486 L377 492 L381 500 L388 511 L392 518 L396 524 L401 533 L408 544 L411 550 L415 557 L421 566 L427 576 L431 583 L435 589 L441 597 L447 607 L452 615 L456 622 L461 628 L467 637 L473 647 L478 654 L482 660 L487 667 L493 677 L499 686 L503 693 L508 699 L513 708 L519 719 L523 725 L527 732 L533 741 L538 751 L542 758 L546 765 L552 777 L555 783 L559 792 L564 803 L567 809 L572 822 L575 829 L579 839 L582 848 L585 858 L588 868 L592 880 L594 887 L597 900"/><path d="M1284 900 L1287 887 L1289 880 L1292 868 L1295 855 L1297 848 L1301 835 L1304 829 L1308 816 L1310 809 L1315 797 L1318 790 L1322 780 L1326 771 L1329 764 L1334 751 L1337 745 L1341 736 L1347 725 L1350 719 L1355 710 L1360 699 L1364 693 L1368 685 L1374 674 L1378 667 L1382 660 L1387 651 L1393 641 L1397 635 L1401 628 L1407 619 L1413 609 L1418 602 L1422 596 L1427 588 L1433 578 L1439 570"/><path d="M0 309 L8 311 L20 313 L33 317 L39 318 L53 322 L59 324 L72 328 L81 330 L92 334 L100 337 L112 341 L118 344 L132 349 L138 352 L148 356 L158 360 L164 364 L175 369 L184 374 L191 377 L199 382 L209 388 L217 393 L224 398 L230 402 L238 408 L246 414 L254 421 L261 427 L268 434 L275 440 L281 447 L287 453 L293 460 L298 466 L304 473 L309 479 L316 488 L322 496 L328 505 L333 512 L338 518 L342 524 L348 533 L355 542 L361 550 L365 557 L370 563 L375 570 L381 578 L388 587 L395 595 L400 602 L405 609 L410 615 L415 622 L421 628 L427 637 L434 645 L441 653 L447 660 L452 667 L457 673 L462 680 L467 686 L473 695 L480 704 L486 712 L491 719 L495 725 L500 732 L506 742 L512 751 L516 758 L520 764 L526 775 L530 783 L534 790 L539 800 L543 809 L546 816 L552 829 L555 835 L559 847 L562 855 L565 866 L568 874 L571 887 L573 894"/><path d="M1311 900 L1314 887 L1315 881 L1318 868 L1322 855 L1324 848 L1327 835 L1329 829 L1334 816 L1336 809 L1341 796 L1343 790 L1348 778 L1351 771 L1355 763 L1360 751 L1363 745 L1368 734 L1372 725 L1376 719 L1381 709 L1386 699 L1389 693 L1394 685 L1400 673 L1404 667 L1408 660 L1414 651 L1420 641 L1424 635 L1428 628 L1433 620 L1440 611"/><path d="M0 340 L13 343 L20 345 L33 348 L39 350 L53 355 L59 357 L72 362 L79 364 L91 369 L99 372 L106 376 L118 381 L125 385 L132 388 L144 395 L151 399 L158 403 L165 408 L175 414 L184 421 L191 426 L197 432 L204 437 L210 443 L217 449 L224 455 L230 462 L237 468 L243 476 L250 483 L256 491 L263 498 L268 505 L274 512 L279 518 L284 524 L289 531 L296 540 L302 548 L309 556 L315 563 L321 570 L326 576 L332 583 L338 589 L344 596 L350 602 L356 609 L362 615 L369 622 L375 628 L382 635 L388 641 L395 648 L401 654 L408 661 L414 668 L421 675 L427 682 L434 689 L441 696 L447 703 L454 711 L460 719 L465 725 L470 732 L475 738 L480 745 L487 754 L493 763 L498 771 L502 777 L506 784 L513 796 L517 803 L520 809 L526 822 L529 829 L533 836 L537 848 L540 855 L544 868 L546 874 L550 887 L552 896"/><path d="M1338 900 L1340 887 L1342 881 L1344 868 L1348 855 L1349 848 L1353 835 L1355 829 L1359 816 L1361 809 L1366 796 L1369 790 L1374 777 L1376 771 L1381 761 L1385 751 L1388 745 L1394 733 L1398 725 L1401 719 L1407 708 L1412 699 L1416 693 L1420 685 L1427 674 L1431 667 L1435 660 L1440 653"/><path d="M0 374 L7 376 L20 380 L27 382 L39 387 L46 389 L59 395 L66 397 L74 401 L85 407 L92 411 L99 414 L110 421 L118 426 L125 431 L132 436 L138 441 L146 447 L154 453 L161 460 L168 466 L175 473 L181 479 L187 486 L193 492 L199 499 L204 505 L210 513 L217 521 L224 529 L230 537 L236 544 L241 550 L247 557 L252 563 L258 570 L264 576 L270 583 L276 589 L283 596 L290 602 L297 609 L304 615 L312 622 L320 628 L328 635 L335 641 L342 646 L348 651 L355 656 L362 662 L368 667 L376 673 L384 680 L391 686 L399 693 L406 699 L413 706 L420 712 L426 719 L433 725 L439 732 L445 738 L450 745 L456 751 L461 758 L467 765 L473 774 L480 783 L485 790 L489 796 L493 804 L500 816 L503 822 L507 829 L513 842 L515 848 L519 859 L523 868 L526 878 L529 887 L532 900"/><path d="M1365 900 L1367 887 L1368 881 L1371 868 L1374 855 L1375 848 L1379 835 L1381 828 L1385 816 L1387 808 L1392 796 L1394 790 L1399 777 L1402 771 L1407 759 L1411 751 L1414 745 L1420 732 L1424 725 L1428 719 L1433 708 L1439 699"/><path d="M0 414 L13 419 L20 422 L33 427 L39 431 L46 434 L57 440 L66 445 L72 450 L79 454 L86 460 L95 466 L102 473 L109 479 L116 486 L122 492 L128 499 L134 505 L139 512 L145 518 L151 526 L158 535 L164 544 L169 550 L174 557 L179 563 L184 570 L191 578 L197 586 L204 593 L210 600 L217 606 L224 612 L230 618 L237 623 L244 628 L253 635 L263 641 L270 645 L276 649 L284 654 L295 660 L302 664 L309 668 L318 673 L329 680 L335 684 L342 688 L350 693 L359 699 L368 705 L375 710 L381 715 L388 720 L395 725 L403 732 L410 738 L417 745 L424 751 L430 758 L436 764 L442 771 L448 777 L454 785 L460 793 L467 803 L471 809 L475 816 L480 824 L486 835 L490 842 L493 849 L498 861 L501 868 L505 881 L507 887 L511 900"/><path d="M54 900 L51 894 L46 881 L43 874 L39 866 L34 855 L31 848 L26 840 L20 830 L14 822 L9 816 L3 809"/><path d="M1392 900 L1394 887 L1395 881 L1397 868 L1400 855 L1401 848 L1405 835 L1407 828 L1411 816 L1414 808 L1418 796 L1420 790 L1426 777 L1429 771 L1433 760 L1438 751"/><path d="M0 470 L7 473 L16 479 L26 486 L33 491 L39 496 L46 502 L53 509 L59 516 L66 524 L71 531 L75 537 L80 544 L85 554 L90 563 L94 570 L99 580 L103 589 L106 596 L112 608 L115 615 L119 622 L125 632 L132 640 L138 647 L145 653 L151 657 L158 661 L171 667 L178 669 L191 673 L197 675 L210 679 L217 681 L230 684 L238 686 L250 690 L261 693 L270 695 L281 699 L289 702 L299 706 L309 710 L316 712 L329 718 L335 721 L343 725 L355 732 L362 736 L368 740 L375 745 L384 751 L393 758 L401 764 L408 770 L414 776 L421 782 L427 789 L434 796 L439 803 L444 809 L449 816 L454 823 L460 833 L465 842 L469 848 L473 858 L478 868 L480 874 L485 887 L487 894"/><path d="M98 900 L95 887 L93 874 L92 868 L90 855 L87 842 L85 829 L84 822 L82 809 L80 796 L78 790 L75 777 L72 767 L69 758 L66 751 L59 740 L53 732 L46 726 L39 721 L33 717 L22 712 L13 709 L4 706"/><path d="M1419 900 L1420 893 L1422 881 L1424 868 L1427 855 L1429 848 L1432 835 L1434 829 L1438 816"/><path d="M138 900 L137 887 L136 874 L136 861 L137 848 L138 841 L140 829 L143 816 L145 809 L150 796 L153 790 L158 781 L164 773 L171 766 L178 760 L184 755 L191 751 L204 746 L210 744 L224 741 L237 739 L250 738 L263 739 L276 740 L289 742 L300 745 L309 747 L322 751 L329 754 L338 758 L348 762 L355 766 L364 771 L374 777 L381 782 L388 787 L395 792 L401 798 L408 804 L414 811 L421 818 L427 826 L434 835 L438 842 L443 848 L447 856 L453 868 L456 874 L460 885 L463 894"/><path d="M176 900 L176 887 L178 876 L179 868 L182 855 L184 848 L190 835 L193 829 L197 822 L204 814 L210 807 L217 802 L225 796 L237 790 L243 787 L256 784 L263 782 L276 781 L289 781 L302 783 L309 784 L322 787 L332 790 L342 794 L348 797 L360 803 L368 808 L375 812 L381 817 L388 823 L395 829 L401 835 L408 843 L414 851 L421 861 L425 868 L428 874 L434 886 L437 894"/><path d="M217 900 L218 894 L221 881 L224 873 L230 861 L234 855 L239 848 L246 842 L255 835 L263 831 L270 828 L283 824 L296 823 L309 823 L322 825 L334 829 L342 832 L349 835 L360 842 L368 848 L375 853 L381 859 L388 867 L394 874 L398 881 L402 887 L408 900"/><path d="M273 900 L277 894 L283 887 L292 881 L302 877 L316 876 L329 878 L335 881 L346 887 L354 894 L359 900"/></g></svg></div>
     <div class="wrap">
-      <p class="hero-kicker">From service to a corporate career</p>
-      <h1>You've led in uniform. Now let's get you hired.</h1>
-      <p class="lede">A free community helping people from the Army, Navy and Air Force move into corporate roles, with a CV recruiters understand, applications that match the job, and referrals from people already inside.</p>
-      <div class="hero-actions">
-        <a class="btn btn-brass" href="#register" data-track="forces">I'm moving out of service</a>
-        <a class="btn btn-outline" href="#register" data-track="mentors">I work in corporate and want to help</a>
-      </div>
-      <p class="hero-note">Free. No fees, no placement charges.</p>
+      <p class="hero-kicker">For the Army, Navy and Air Force</p>
+      <h1 class="display">Helping you move from defence to the corporate world.</h1>
+      <p class="hero-sub">Free support for people leaving the forces, backed by corporate professionals who want to help.</p>
 
-      <div class="route" aria-hidden="true">
-        <svg viewBox="0 0 1000 250">
-          <path class="trail" d="M70 170 C 190 170, 230 80, 330 80 S 480 175, 590 175 S 760 70, 880 100"/>
-          <path class="march" d="M70 170 C 190 170, 230 80, 330 80 S 480 175, 590 175 S 760 70, 880 100"/>
-          <path class="icon icon-brass" d="M50 168 L70 152 L90 168 M50 186 L70 170 L90 186"/>
-          <circle class="stop" cx="330" cy="80" r="9"/>
-          <circle class="stop" cx="590" cy="175" r="9"/>
-          <rect class="icon" x="872" y="82" width="56" height="40" rx="5"/>
-          <path class="icon" d="M888 82 V73 H912 V82 M872 99 H928"/>
-          <text class="label" x="70" y="228" text-anchor="middle">Service</text>
-          <text class="label" x="330" y="45" text-anchor="middle">Your CV</text>
-          <text class="label" x="590" y="228" text-anchor="middle">Applications</text>
-          <text class="label" x="900" y="160" text-anchor="middle">Offer</text>
-        </svg>
+      <div class="choices">
+        <div class="choice choice-main">
+          <p class="choice-who">Leaving, or already left, the forces?</p>
+          <h2>Get support for your move to corporate</h2>
+          <p>Referrals, CV, LinkedIn and job openings. Free.</p>
+          <a class="btn btn-ink" href="#register" data-track="forces">Register for support</a>
+        </div>
+        <div class="choice choice-alt">
+          <p class="choice-who">Already working in corporate?</p>
+          <h2>Mentor someone from the forces</h2>
+          <p>Share your experience. Pro bono.</p>
+          <a class="btn btn-brass" href="#register" data-track="mentors">Register as a mentor</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="block block-white" id="gap">
-    <div class="wrap gap-grid">
-      <div>
-        <h2>The experience is there. The translation isn't.</h2>
-        <p class="lede">Years of leading teams, running logistics and managing people under pressure don't come across well on a corporate CV. Most people leaving the forces have never written one for a recruiter, never used job portals properly, and don't know how referrals actually work. That's the gap we're here to close.</p>
-      </div>
-      <ul class="gap-list">
-        <li>
-          <h3>CVs written for the wrong reader</h3>
-          <p>Service records list postings and appointments. Recruiters look for scope, numbers and results, in their own language.</p>
-        </li>
-        <li>
-          <h3>Applying without matching</h3>
-          <p>Sending the same CV to fifty openings rarely works. Each application has to reflect the job description.</p>
-        </li>
-        <li>
-          <h3>No one to ask inside</h3>
-          <p>Most corporate hiring runs on referrals, and most people leaving service don't know who to ask.</p>
-        </li>
+  <section class="services" id="services">
+    <div class="wrap">
+      <h2 class="section-title display">What we offer</h2>
+      <ul class="services-grid">
+          <li><h3>Referrals</h3><p>We help you get the right referrals, through credible sources.</p></li>
+          <li><h3>Job opportunities</h3><p>Openings from credible sources, matched to your experience.</p></li>
+          <li><h3>CV drafting</h3><p>Help drafting a new CV, or improving the one you have.</p></li>
+          <li><h3>LinkedIn profile</h3><p>Recommendations to strengthen your profile.</p></li>
+          <li><h3>Interview preparation</h3><p>Guidance on how corporate interviews work.</p></li>
+          <li><h3>Mentors</h3><p>Connect with professionals already working in corporate.</p></li>
       </ul>
     </div>
   </section>
 
-  <section class="block" id="about">
+  <section class="register" id="register">
     <div class="wrap">
-      <h2>What we help with</h2>
-      <div class="help-grid">
-        <div class="help-item"><h3>CV rewrite</h3><p>Turning ranks, appointments and responsibilities into terms hiring managers recognise.</p></div>
-        <div class="help-item"><h3>Matching to job descriptions</h3><p>Tailoring your CV for each role you apply to.</p></div>
-        <div class="help-item"><h3>LinkedIn profile</h3><p>A headline and summary that show up in recruiter searches.</p></div>
-        <div class="help-item"><h3>Job search basics</h3><p>Which portals to use, setting alerts, and following up.</p></div>
-        <div class="help-item"><h3>Referrals</h3><p>Introductions through corporate professionals in our network, where there's a genuine fit.</p></div>
-        <div class="help-item"><h3>Interview preparation</h3><p>How corporate interviews differ, and how to talk about your service.</p></div>
-      </div>
-      <div class="landing">
-        <p>Where people often land</p>
-        <ul class="chips">
-          <li>Operations</li>
-          <li>Supply chain and logistics</li>
-          <li>Procurement</li>
-          <li>HR and administration</li>
-          <li>Security and risk</li>
-          <li>Project management</li>
-          <li>Facilities</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="block block-white" id="how">
-    <div class="wrap">
-      <h2>How it works</h2>
-      <ol class="steps">
-        <li><h3>Register</h3><p>It takes about three minutes.</p></li>
-        <li><h3>We get in touch</h3><p>Someone from the team reaches out on WhatsApp or email.</p></li>
-        <li><h3>Work on your profile</h3><p>CV, LinkedIn and target roles, one piece at a time.</p></li>
-        <li><h3>Apply and get referred</h3><p>Tailored applications, plus introductions where we have a contact.</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="mentor-band">
-    <div class="wrap">
-      <div>
-        <h2>Work in corporate? Lend a hand.</h2>
-        <p>If you've hired, managed or worked alongside people from the forces, you know what they bring. An hour a month reviewing a CV, running a mock interview or passing on a referral makes a real difference.</p>
-      </div>
-      <a class="btn btn-brass" href="#register" data-track="mentors">Register as a mentor</a>
-    </div>
-  </section>
-
-  <section class="block block-white">
-    <div class="wrap about-grid">
-      <div>
-        <h2>Who we are</h2>
-        <p class="lede">Next Posting is a small, newly started team of corporate professionals who want to see more people from the forces do well in civilian careers. We're building the community first, and everything we offer is free.</p>
-      </div>
-      <p class="independent">Next Posting is independent and not affiliated with the Indian Armed Forces, the Ministry of Defence or any government body.</p>
-    </div>
-  </section>
-
-  <section class="block register" id="register">
-    <div class="wrap">
-      <h2>Join the community</h2>
-      <p class="lede">Registration is free and takes about three minutes.</p>
+      <h2 class="section-title display">Register</h2>
+      <p class="section-sub">Free, and takes about three minutes. Choose the form that fits you.</p>
 
       <div class="panel">
         <div class="tabs" role="tablist">
-          <button class="tab" role="tab" id="tab-forces" aria-controls="panel-forces" aria-selected="true">Moving out of service</button>
+          <button class="tab" role="tab" id="tab-forces" aria-controls="panel-forces" aria-selected="true">Moving to corporate</button>
           <button class="tab" role="tab" id="tab-mentors" aria-controls="panel-mentors" aria-selected="false" tabindex="-1">Corporate mentor</button>
         </div>
 
@@ -634,9 +481,9 @@
     </div>
   </section>
 
-  <section class="block block-white" id="faq">
-    <div class="wrap">
-      <h2>Questions</h2>
+  <section class="faq-sec" id="faq">
+    <div class="wrap faq-grid">
+      <h2 class="section-title display">Questions</h2>
       <div class="faq">
         <details>
           <summary>Is it really free?</summary>
@@ -692,8 +539,17 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>&copy; <span id="year">2026</span> Next Posting<span class="contact-yes">. Contact: <a data-contact href="#"></a></span></span>
-    <span>Independent community, not affiliated with any government body.</span>
+    <div class="foot-top">
+      <div>
+        <a class="brand" href="#top"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 30 L32 17 L50 30 M14 45 L32 32 L50 45" fill="none" stroke="#C8A04A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg> Next Posting</a>
+        <p class="foot-about">Built by a small team of corporate professionals. Independent, and not affiliated with the Indian Armed Forces, the Ministry of Defence or any government body.</p>
+      </div>
+      <p class="contact-yes">Contact: <a data-contact href="#"></a></p>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="year">2026</span> Next Posting</span>
+      <span>Free for candidates. Pro bono for mentors.</span>
+    </div>
   </div>
 </footer>
 
@@ -709,6 +565,8 @@
   fetch(CONFIG.API_URL).catch(() => {});
 
   document.getElementById('year').textContent = new Date().getFullYear();
+
+
 
   // Contact email
   const hasEmail = /@/.test(CONFIG.CONTACT_EMAIL);
@@ -918,14 +776,18 @@
   async function send(payload) {
     const opts = { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) };
     const ms = payload.cv ? 90000 : 25000;
+    let r;
     try {
-      const r = await timedFetch(CONFIG.API_URL, opts, ms);
-      if (r.status >= 500) throw new Error('worker unavailable');
-      return await r.json();
+      r = await timedFetch(CONFIG.API_URL, opts, ms);
     } catch (err) {
-      // Fallback: go straight to Google if the Worker is unreachable
-      const r = await timedFetch(CONFIG.DIRECT_URL, opts, ms);
+      if (err.name === 'AbortError') throw err;
+      // The Worker itself is unreachable: go straight to Google instead
+      r = await timedFetch(CONFIG.DIRECT_URL, opts, ms);
+    }
+    try {
       return await r.json();
+    } catch (e) {
+      throw new Error('Something went wrong on our side. Please try again in a few minutes.');
     }
   }
 
@@ -1059,9 +921,12 @@
         successEl.hidden = false;
         successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } catch (err) {
+        // Browsers word connection failures differently ("Failed to fetch", "Load failed", "NetworkError...")
         formError.textContent = err.name === 'AbortError'
           ? 'This is taking too long. Please check your connection and try again.'
-          : (err.message && err.message !== 'Failed to fetch' ? err.message : 'Could not connect. Please check your connection and try again.');
+          : (err instanceof TypeError || !err.message)
+            ? 'Could not connect. Please check your connection and try again.'
+            : err.message;
       } finally {
         btn.disabled = false;
         btn.textContent = btnText;
