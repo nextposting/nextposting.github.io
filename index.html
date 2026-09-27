@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Next Posting | From defence to the corporate world</title>
+<title>NextPosting | From defence to the corporate world</title>
 <meta name="description" content="Free help for people from the Army, Navy and Air Force moving into corporate jobs: CVs recruiters read, applications that fit, and referrals from people inside.">
-<meta property="og:title" content="Next Posting | From defence to the corporate world">
+<meta property="og:title" content="NextPosting | From defence to the corporate world">
 <meta property="og:description" content="Free help for people from the Army, Navy and Air Force moving into corporate jobs.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0C1B2E">
@@ -155,6 +155,9 @@
   .label-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
   .help-link { background: none; border: 0; padding: 0; font: inherit; font-size: 14px; font-weight: 700; color: var(--brass-ink); text-decoration: underline; cursor: pointer; }
   .hint { font-size: 14px; color: var(--muted); }
+  .field[hidden] { display: none; }
+  .np { font-weight: 700; letter-spacing: -0.005em; }
+  legend + .hint { margin: -4px 0 10px; }
   .counter { font-size: 13px; color: var(--muted); text-align: right; }
   .date-input { position: relative; }
   .date-display { display: flex; align-items: center; justify-content: space-between; min-height: 46px; padding: 11px 12px; font-size: 16px; border: 1px solid #BFC6BD; border-radius: 3px; background: var(--white); color: var(--muted); }
@@ -239,7 +242,7 @@
 
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Next Posting home"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 30 L32 17 L50 30 M14 45 L32 32 L50 45" fill="none" stroke="#C8A04A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg> Next Posting</a>
+    <a class="brand" href="#top" aria-label="NextPosting home"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 30 L32 17 L50 30 M14 45 L32 32 L50 45" fill="none" stroke="#C8A04A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg> NextPosting</a>
     <nav class="nav" aria-label="Main">
       <a class="link" href="#services">What we offer</a>
       <a class="link" href="#faq">FAQ</a>
@@ -283,7 +286,7 @@
           <li><h3>CV drafting</h3><p>Help drafting a new CV, or improving the one you have.</p></li>
           <li><h3>LinkedIn profile</h3><p>Recommendations to strengthen your profile.</p></li>
           <li><h3>Interview preparation</h3><p>Guidance on how corporate interviews work.</p></li>
-          <li><h3>Mentors</h3><p>Connect with professionals already working in corporate.</p></li>
+          <li><h3>Mentors</h3><p>Optional one-to-one guidance from people already working in corporate.</p></li>
       </ul>
     </div>
   </section>
@@ -366,13 +369,38 @@
               </fieldset>
               <fieldset class="field full" data-rule="multi">
                 <legend>What do you need help with?</legend>
+                <p class="hint">Pick all that apply.</p>
                 <div class="toggles">
-                  <label class="toggle"><input type="checkbox" name="helpNeeded" value="CV rewrite"><span>CV rewrite</span></label>
-                  <label class="toggle"><input type="checkbox" name="helpNeeded" value="Matching to job descriptions"><span>Matching to job descriptions</span></label>
+                  <label class="toggle"><input type="checkbox" name="helpNeeded" value="CV drafting and review"><span>CV drafting and review</span></label>
                   <label class="toggle"><input type="checkbox" name="helpNeeded" value="LinkedIn profile"><span>LinkedIn profile</span></label>
-                  <label class="toggle"><input type="checkbox" name="helpNeeded" value="Job search basics"><span>Job search basics</span></label>
+                  <label class="toggle"><input type="checkbox" name="helpNeeded" value="Choosing the right roles"><span>Choosing the right roles</span></label>
+                  <label class="toggle"><input type="checkbox" name="helpNeeded" value="Tailoring applications"><span>Tailoring applications</span></label>
+                  <label class="toggle"><input type="checkbox" name="helpNeeded" value="Job search and portals"><span>Job search and portals</span></label>
                   <label class="toggle"><input type="checkbox" name="helpNeeded" value="Referrals"><span>Referrals</span></label>
                   <label class="toggle"><input type="checkbox" name="helpNeeded" value="Interview preparation"><span>Interview preparation</span></label>
+                  <label class="toggle"><input type="checkbox" name="helpNeeded" value="Salary and offer negotiation"><span>Salary and offer negotiation</span></label>
+                  <label class="toggle"><input type="checkbox" name="helpNeeded" value="Understanding corporate culture"><span>Understanding corporate culture</span></label>
+                  <label class="toggle"><input type="checkbox" name="helpNeeded" value="Upskilling and certifications"><span>Upskilling and certifications</span></label>
+                  <label class="toggle"><input type="checkbox" name="helpNeeded" value="Networking"><span>Networking</span></label>
+                  <label class="toggle"><input type="checkbox" name="helpNeeded" value="Industry insights"><span>Industry insights</span></label>
+                </div>
+              </fieldset>
+              <fieldset class="field full" data-rule="yesno">
+                <legend>Are you looking for a mentor?</legend>
+                <p class="hint">A free service we provide. <button type="button" class="help-link" data-open="mentor-help">How it works</button></p>
+                <div class="toggles">
+                  <label class="toggle"><input type="radio" name="wantsMentor" value="Yes"><span>Yes</span></label>
+                  <label class="toggle"><input type="radio" name="wantsMentor" value="No"><span>No</span></label>
+                </div>
+              </fieldset>
+              <fieldset class="field full" data-rule="multi" id="mentor-contact" hidden>
+                <legend>How would you like to connect with your mentor?</legend>
+                <p class="hint">Pick all that suit you.</p>
+                <div class="toggles">
+                  <label class="toggle"><input type="checkbox" name="mentorContact" value="Email"><span>Email</span></label>
+                  <label class="toggle"><input type="checkbox" name="mentorContact" value="Phone call"><span>Phone call</span></label>
+                  <label class="toggle"><input type="checkbox" name="mentorContact" value="Zoom"><span>Zoom</span></label>
+                  <label class="toggle"><input type="checkbox" name="mentorContact" value="Google Meet"><span>Google Meet</span></label>
                 </div>
               </fieldset>
               <div class="field">
@@ -402,7 +430,7 @@
                 <span class="counter" aria-live="polite">0/300</span>
               </div>
               <div class="field full">
-                <label class="consent"><input type="checkbox" name="consent" data-rule="consent"><span>I agree that Next Posting can store these details, and my CV if I upload one, and contact me about my job search. My details won't be shared with anyone without my permission.</span></label>
+                <label class="consent"><input type="checkbox" name="consent" data-rule="consent"><span>I agree that <span class="np">NextPosting</span> can store these details, and my CV if I upload one, and contact me about my job search. My details won't be shared with anyone without my permission.</span></label>
               </div>
             </div>
             <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
@@ -450,12 +478,20 @@
               </div>
               <fieldset class="field full" data-rule="multi">
                 <legend>How can you help?</legend>
+                <p class="hint">Pick all that apply.</p>
                 <div class="toggles">
-                  <label class="toggle"><input type="checkbox" name="canHelpWith" value="CV review"><span>CV review</span></label>
-                  <label class="toggle"><input type="checkbox" name="canHelpWith" value="Mock interviews"><span>Mock interviews</span></label>
+                  <label class="toggle"><input type="checkbox" name="canHelpWith" value="CV drafting and review"><span>CV drafting and review</span></label>
+                  <label class="toggle"><input type="checkbox" name="canHelpWith" value="LinkedIn profile"><span>LinkedIn profile</span></label>
+                  <label class="toggle"><input type="checkbox" name="canHelpWith" value="Choosing the right roles"><span>Choosing the right roles</span></label>
+                  <label class="toggle"><input type="checkbox" name="canHelpWith" value="Tailoring applications"><span>Tailoring applications</span></label>
+                  <label class="toggle"><input type="checkbox" name="canHelpWith" value="Job search and portals"><span>Job search and portals</span></label>
                   <label class="toggle"><input type="checkbox" name="canHelpWith" value="Referrals"><span>Referrals</span></label>
-                  <label class="toggle"><input type="checkbox" name="canHelpWith" value="LinkedIn review"><span>LinkedIn review</span></label>
-                  <label class="toggle"><input type="checkbox" name="canHelpWith" value="Career guidance"><span>Career guidance</span></label>
+                  <label class="toggle"><input type="checkbox" name="canHelpWith" value="Interview preparation"><span>Interview preparation</span></label>
+                  <label class="toggle"><input type="checkbox" name="canHelpWith" value="Salary and offer negotiation"><span>Salary and offer negotiation</span></label>
+                  <label class="toggle"><input type="checkbox" name="canHelpWith" value="Understanding corporate culture"><span>Understanding corporate culture</span></label>
+                  <label class="toggle"><input type="checkbox" name="canHelpWith" value="Upskilling and certifications"><span>Upskilling and certifications</span></label>
+                  <label class="toggle"><input type="checkbox" name="canHelpWith" value="Networking"><span>Networking</span></label>
+                  <label class="toggle"><input type="checkbox" name="canHelpWith" value="Industry insights"><span>Industry insights</span></label>
                 </div>
               </fieldset>
               <div class="field full">
@@ -466,7 +502,7 @@
                 <input type="text" id="m-li" name="linkedin" data-rule="linkedin" data-required inputmode="url" maxlength="300" placeholder="https://www.linkedin.com/in/yourname" autocapitalize="off" autocorrect="off" spellcheck="false">
               </div>
               <div class="field full">
-                <label class="consent"><input type="checkbox" name="consent" data-rule="consent"><span>I agree that Next Posting can store these details and contact me about mentoring.</span></label>
+                <label class="consent"><input type="checkbox" name="consent" data-rule="consent"><span>I agree that <span class="np">NextPosting</span> can store these details and contact me about mentoring.</span></label>
               </div>
             </div>
             <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
@@ -502,8 +538,16 @@
           <p>Yes. We pay our mentors for their time. Once you register, we'll reach out to discuss how it works and agree the details with you.</p>
         </details>
         <details>
+          <summary>Do I have to take a mentor?</summary>
+          <p>No. Mentorship is optional, and only for those who ask for it. You can use our other services, like referrals, job openings and help with your CV, without it.</p>
+        </details>
+        <details>
           <summary>Do you verify mentors?</summary>
-          <p>No. We don't vet or verify mentor profiles at the moment. We share a list of available mentors and suggest matches, but we haven't checked their backgrounds, so please use your own judgement before sharing anything personal. We never pass your contact details to a mentor without your consent.</p>
+          <p>Yes, as far as we can online. Before any mentor joins, we review their LinkedIn profile and meet them on a video call (Zoom or Google Meet) to understand their experience and why they want to mentor. We don't run formal background checks, so please use your own judgement too. The list of mentors we send you includes each mentor's <span class="np">NextPosting</span> ID, and we never pass your contact details to a mentor without your consent.</p>
+        </details>
+        <details>
+          <summary>What if something goes wrong?</summary>
+          <p>We have a zero-tolerance policy on inappropriate behaviour. Everyone who registers gets a unique ID. If anyone you've been connected with through <span class="np">NextPosting</span> behaves in a way that concerns you, email us at <a data-contact href="#"></a> with their <span class="np">NextPosting</span> ID. We'll look into it straight away, and anyone found to have behaved inappropriately is removed from the platform immediately.</p>
         </details>
         <details>
           <summary>Are the job opportunities genuine?</summary>
@@ -514,8 +558,12 @@
           <p>We'll contact you on WhatsApp or email. We're a small team, so it can take a few days.</p>
         </details>
         <details>
+          <summary>What if I forget my <span class="np">NextPosting</span> ID?</summary>
+          <p>Email us at <a data-contact href="#"></a> from the email address you registered with, and we'll send it to you.</p>
+        </details>
+        <details>
           <summary>What do you do with my details?</summary>
-          <p>We use them only to help with your job search, and we never sell them. <span class="contact-yes">To have them deleted, email us at <a data-contact href="#"></a>.</span><span class="contact-no">To have them deleted, just let us know when we contact you.</span></p>
+          <p>We use them only to help with your job search, and we never sell them. <span class="contact-yes">To have them deleted, email us at <a data-contact href="#"></a> with your <span class="np">NextPosting</span> ID.</span><span class="contact-no">To have them deleted, just let us know when we contact you.</span></p>
         </details>
       </div>
     </div>
@@ -537,17 +585,32 @@
   <p class="dialog-example">It looks like: linkedin.com/in/yourname</p>
 </dialog>
 
+<dialog class="help-dialog" id="mentor-help" aria-labelledby="mentor-help-title">
+  <button type="button" class="dialog-close" aria-label="Close">&times;</button>
+  <h3 id="mentor-help-title">How mentoring works</h3>
+  <ol>
+    <li>Tell us what you need help with in this form.</li>
+    <li>We shortlist mentors who match your needs and email you the list.</li>
+    <li>You pick the mentor you'd like.</li>
+    <li>With your consent, we connect you both by sharing the relevant contact details.</li>
+    <li>You connect the way you prefer: email, phone, Zoom or Google Meet.</li>
+  </ol>
+  <p class="dialog-sub">About our mentors</p>
+  <p>We review every mentor's LinkedIn profile and meet them on a video call before they join. We don't run formal background checks, so please use your own judgement too.</p>
+  <p class="dialog-example">Free for you. Mentors are paid by <span class="np">NextPosting</span>.</p>
+</dialog>
+
 <footer class="site-footer">
   <div class="wrap">
     <div class="foot-top">
       <div>
-        <a class="brand" href="#top"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 30 L32 17 L50 30 M14 45 L32 32 L50 45" fill="none" stroke="#C8A04A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg> Next Posting</a>
+        <a class="brand" href="#top"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 30 L32 17 L50 30 M14 45 L32 32 L50 45" fill="none" stroke="#C8A04A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg> NextPosting</a>
         <p class="foot-about">Built by a small team of corporate professionals. Independent, and not affiliated with the Indian Armed Forces, the Ministry of Defence or any government body.</p>
       </div>
       <p class="contact-yes">Contact: <a data-contact href="#"></a></p>
     </div>
     <div class="foot-bottom">
-      <span>&copy; <span id="year">2026</span> Next Posting</span>
+      <span>&copy; <span id="year">2026</span> <span class="np">NextPosting</span></span>
       <span>Free for candidates. Mentors are paid for their time.</span>
     </div>
   </div>
@@ -721,6 +784,7 @@
       return /[A-Za-z]{2,}/.test(v) ? '' : 'Use letters only, e.g. Operations.';
     },
     multi: (v, el) => el.querySelector('input:checked') ? '' : 'Pick at least one.',
+    yesno: (v, el) => el.querySelector('input:checked') ? '' : 'Please choose Yes or No.',
     consent: (v, el) => el.checked ? '' : 'Please tick this box to continue.'
   };
 
@@ -820,6 +884,18 @@
         clearBtn.addEventListener('click', () => { el.value = ''; refresh(); el.focus(); });
         return;
       }
+      if (rule === 'yesno') {
+        const contact = form.querySelector('#mentor-contact');
+        el.addEventListener('change', () => {
+          const yes = !!el.querySelector('input[value="Yes"]:checked');
+          if (contact) {
+            contact.hidden = !yes;
+            if (!yes) { contact.classList.remove('invalid'); const er = contact.querySelector(':scope > .field-error'); if (er) er.textContent = ''; }
+          }
+          validateField(el);
+        });
+        return;
+      }
       if (rule === 'multi' || rule === 'consent' || rule === 'choice' || rule === 'date') {
         el.addEventListener('change', () => validateField(el));
         if (rule === 'date') el.addEventListener('blur', () => validateField(el));
@@ -846,6 +922,7 @@
 
       let first = null;
       fields.forEach(el => {
+        if (el.closest('[hidden]')) return; // skip questions that aren't showing
         el.dataset.touched = '1';
         if (!validateField(el) && !first) first = el;
       });
@@ -875,6 +952,8 @@
           releaseDate: get('releaseDate'),
           targetRoles: multi('targetRoles'),
           helpNeeded: multi('helpNeeded'),
+          wantsMentor: (form.querySelector('input[name="wantsMentor"]:checked') || {}).value || '',
+          mentorContact: form.querySelector('input[name="wantsMentor"][value="Yes"]:checked') ? multi('mentorContact') : [],
           cities: cleanCities(get('cities')),
           notes: get('notes').trim()
         });
@@ -906,13 +985,13 @@
         const id = escapeHtml(res.regId);
         const heading = res.existing ? 'You\'re already registered' : 'You\'re registered';
         const intro = res.existing
-          ? 'This email is already registered with us. Your ID is:'
-          : 'Thanks for joining. Your registration ID is:';
+          ? 'This email is already registered with us. Your <span class="np">NextPosting</span> ID is:'
+          : 'Thanks for joining. Your <span class="np">NextPosting</span> ID is:';
         successEl.innerHTML =
           '<h3>' + heading + '</h3>' +
           '<p>' + intro + '</p>' +
           '<div class="reg-id"><span>' + id + '</span><button type="button" class="copy-btn">Copy</button></div>' +
-          '<p>Keep it handy. We\'ll contact you on WhatsApp or email, usually within a few days.</p>';
+          '<p>Please make a note of it. We\'ll contact you on WhatsApp or email, usually within a few days.</p>';
         const copyBtn = successEl.querySelector('.copy-btn');
         copyBtn.addEventListener('click', () => {
           navigator.clipboard && navigator.clipboard.writeText(res.regId).then(() => { copyBtn.textContent = 'Copied'; });
