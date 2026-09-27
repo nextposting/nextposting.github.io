@@ -254,7 +254,24 @@
   .file-clear { background: none; border: 0; color: var(--error); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: underline; padding: 0; }
   .label-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
   .help-link { background: none; border: 0; padding: 0; font: inherit; font-size: 14px; font-weight: 600; color: var(--brass-ink); text-decoration: underline; cursor: pointer; }
-  input[type="date"] { cursor: pointer; }
+  .date-input { position: relative; }
+  .date-display {
+    display: flex; align-items: center; justify-content: space-between;
+    min-height: 46px; padding: 11px 12px; font-size: 16px;
+    border: 1px solid #C9C3B5; border-radius: 4px; background: var(--white); color: var(--muted);
+  }
+  .date-display.has-value { color: var(--ink); }
+  .date-display::after {
+    content: ''; width: 18px; height: 18px; flex: none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230B1F3A' stroke-width='2' stroke-linecap='round'%3E%3Crect x='3' y='5' width='18' height='16' rx='2'/%3E%3Cpath d='M3 10h18M8 3v4M16 3v4'/%3E%3C/svg%3E") no-repeat center / contain;
+  }
+  .date-input input[type="date"] {
+    position: absolute; inset: 0; width: 100%; height: 100%; min-height: 0;
+    opacity: 0; cursor: pointer; border: 0; padding: 0; margin: 0;
+    -webkit-appearance: none; appearance: none;
+  }
+  .date-input:focus-within .date-display { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(201,162,77,.35); }
+  .field.invalid .date-display { border-color: var(--error); }
   .help-dialog {
     width: min(440px, calc(100% - 32px)); max-height: calc(100% - 48px); overflow: auto;
     border: 0; border-radius: 10px; padding: 28px 24px 22px; color: var(--ink); background: var(--white);
@@ -482,7 +499,10 @@
               </div>
               <div class="field">
                 <label for="f-release">Release date, or expected</label>
-                <input type="date" id="f-release" name="releaseDate" data-rule="date">
+                <div class="date-input">
+                  <span class="date-display" aria-hidden="true">DD/MM/YYYY</span>
+                  <input type="date" id="f-release" name="releaseDate" data-rule="date">
+                </div>
               </div>
               <fieldset class="field full" data-rule="multi">
                 <legend>Roles you're aiming for</legend>
@@ -636,7 +656,11 @@
         </details>
         <details>
           <summary>Do you verify mentors?</summary>
-          <p>No. We don't vet or verify mentor profiles at the moment. We share a list of available mentors and suggest matches, but we haven't checked their backgrounds, so please use your own judgement before sharing anything personal. We never pass your contact details to a mentor without your consent. The job opportunities we share come from credible sources.</p>
+          <p>No. We don't vet or verify mentor profiles at the moment. We share a list of available mentors and suggest matches, but we haven't checked their backgrounds, so please use your own judgement before sharing anything personal. We never pass your contact details to a mentor without your consent.</p>
+        </details>
+        <details>
+          <summary>Are the job opportunities genuine?</summary>
+          <p>Yes. We only share openings from credible sources, such as company career pages, established job portals and hiring contacts in our network. If anyone asks you to pay a fee to apply for a job in our name, it didn't come from us.</p>
         </details>
         <details>
           <summary>What happens after I register?</summary>
@@ -725,6 +749,15 @@
     el.min = DATE_MIN; el.max = DATE_MAX;
     // Open the calendar wherever the box is clicked, not just on the icon
     el.addEventListener('click', () => { try { el.showPicker(); } catch (e) {} });
+    // Show the chosen date in Indian format (DD/MM/YYYY), whatever the browser's own format
+    const disp = el.parentElement.querySelector('.date-display');
+    const show = () => {
+      const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(el.value);
+      disp.textContent = m ? m[3] + '/' + m[2] + '/' + m[1] : 'DD/MM/YYYY';
+      disp.classList.toggle('has-value', !!m);
+    };
+    el.addEventListener('change', show);
+    el.addEventListener('input', show);
   });
 
   // LinkedIn help pop-up
