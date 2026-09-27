@@ -235,6 +235,45 @@
   .site-footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
   .site-footer a { color: var(--paper); }
 
+  .field-error { color: var(--error); font-size: 14px; margin: 2px 0 0; }
+  .field-error:empty { display: none; }
+  .field.invalid input:not([type="checkbox"]), .field.invalid select, .field.invalid textarea { border-color: var(--error); }
+  .field.invalid .toggle span { border-color: var(--error); }
+  .prefix-input { display: flex; }
+  .prefix-input span { display: flex; align-items: center; padding: 0 12px; background: var(--paper); border: 1px solid #C9C3B5; border-right: 0; border-radius: 4px 0 0 4px; font-weight: 600; color: var(--navy); }
+  .prefix-input input { border-radius: 0 4px 4px 0; }
+  .field.invalid .prefix-input span { border-color: var(--error); }
+  .prefix-input span { white-space: nowrap; }
+  .hint { font-size: 14px; color: var(--muted); margin: 0; }
+  .file-input { position: relative; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .file-input input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .file-btn { display: inline-block; padding: 10px 16px; border: 1px solid var(--navy); border-radius: 4px; color: var(--navy); font-weight: 600; font-size: 15px; cursor: pointer; background: var(--white); }
+  .file-btn:hover { background: var(--paper); }
+  .file-input input:focus-visible + .file-btn { outline: 3px solid var(--brass); outline-offset: 2px; }
+  .file-name { font-size: 15px; color: var(--muted); word-break: break-all; }
+  .file-clear { background: none; border: 0; color: var(--error); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: underline; padding: 0; }
+  .label-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .help-link { background: none; border: 0; padding: 0; font: inherit; font-size: 14px; font-weight: 600; color: var(--brass-ink); text-decoration: underline; cursor: pointer; }
+  input[type="date"] { cursor: pointer; }
+  .help-dialog {
+    width: min(440px, calc(100% - 32px)); max-height: calc(100% - 48px); overflow: auto;
+    border: 0; border-radius: 10px; padding: 28px 24px 22px; color: var(--ink); background: var(--white);
+    box-shadow: 0 20px 60px rgba(11,31,58,.35);
+  }
+  .help-dialog::backdrop { background: rgba(11,31,58,.55); }
+  .help-dialog h3 { font-size: 24px; margin: 0 32px 14px 0; }
+  .help-dialog ol { margin: 0 0 16px; padding-left: 20px; }
+  .help-dialog li { margin-bottom: 6px; }
+  .help-dialog p { margin: 0 0 12px; }
+  .dialog-sub { font-weight: 600; color: var(--navy); margin-bottom: 6px !important; }
+  .dialog-example { font-size: 14px; color: var(--muted); background: var(--paper); padding: 8px 12px; border-radius: 4px; margin: 4px 0 0 !important; }
+  .dialog-close {
+    position: absolute; top: 10px; right: 10px; width: 40px; height: 40px;
+    border: 0; background: none; font-size: 30px; line-height: 1; color: var(--muted); cursor: pointer; border-radius: 50%;
+  }
+  .dialog-close:hover { background: var(--paper); color: var(--navy); }
+  .counter { font-size: 13px; color: var(--muted); text-align: right; }
+
   /* Responsive */
   @media (max-width: 900px) {
     .gap-grid, .about-grid { grid-template-columns: 1fr; gap: 36px; }
@@ -403,19 +442,19 @@
             <div class="form-grid">
               <div class="field">
                 <label for="f-name">Full name</label>
-                <input type="text" id="f-name" name="fullName" autocomplete="name" required maxlength="120">
+                <input type="text" id="f-name" name="fullName" data-rule="name" autocomplete="name" maxlength="60" autocapitalize="words" spellcheck="false">
               </div>
               <div class="field">
                 <label for="f-email">Email</label>
-                <input type="email" id="f-email" name="email" autocomplete="email" required maxlength="160">
+                <input type="email" id="f-email" name="email" data-rule="email" autocomplete="email" maxlength="100" autocapitalize="off" spellcheck="false">
               </div>
               <div class="field">
                 <label for="f-wa">WhatsApp number</label>
-                <input type="tel" id="f-wa" name="whatsapp" autocomplete="tel" placeholder="98765 43210" required maxlength="20">
+                <div class="prefix-input"><span>+91</span><input type="tel" id="f-wa" name="whatsapp" data-rule="phone" inputmode="numeric" autocomplete="tel-national" placeholder="9876543210"></div>
               </div>
               <div class="field">
                 <label for="f-service">Service</label>
-                <select id="f-service" name="service" required>
+                <select id="f-service" name="service" data-rule="choice">
                   <option value="">Select</option>
                   <option>Army</option>
                   <option>Navy</option>
@@ -424,7 +463,7 @@
               </div>
               <div class="field">
                 <label for="f-category">Category</label>
-                <select id="f-category" name="category" required>
+                <select id="f-category" name="category" data-rule="choice">
                   <option value="">Select</option>
                   <option>SSC officer</option>
                   <option>PC officer (premature or regular retirement)</option>
@@ -435,17 +474,17 @@
               </div>
               <div class="field">
                 <label for="f-rank">Rank at release <span class="opt">(optional)</span></label>
-                <input type="text" id="f-rank" name="rank" maxlength="60">
+                <input type="text" id="f-rank" name="rank" data-rule="rank" maxlength="30" placeholder="Lt Col" spellcheck="false">
               </div>
               <div class="field">
                 <label for="f-years">Years of service</label>
-                <input type="number" id="f-years" name="yearsOfService" min="0" max="45" inputmode="numeric" required>
+                <input type="text" id="f-years" name="yearsOfService" data-rule="years" inputmode="numeric" maxlength="2">
               </div>
               <div class="field">
                 <label for="f-release">Release date, or expected</label>
-                <input type="month" id="f-release" name="releaseDate" required>
+                <input type="date" id="f-release" name="releaseDate" data-rule="date">
               </div>
-              <fieldset class="field full">
+              <fieldset class="field full" data-rule="multi">
                 <legend>Roles you're aiming for</legend>
                 <div class="toggles">
                   <label class="toggle"><input type="checkbox" name="targetRoles" value="Operations"><span>Operations</span></label>
@@ -458,7 +497,7 @@
                   <label class="toggle"><input type="checkbox" name="targetRoles" value="Not sure yet"><span>Not sure yet</span></label>
                 </div>
               </fieldset>
-              <fieldset class="field full">
+              <fieldset class="field full" data-rule="multi">
                 <legend>What do you need help with?</legend>
                 <div class="toggles">
                   <label class="toggle"><input type="checkbox" name="helpNeeded" value="CV rewrite"><span>CV rewrite</span></label>
@@ -471,18 +510,32 @@
               </fieldset>
               <div class="field">
                 <label for="f-cities">Preferred cities <span class="opt">(optional)</span></label>
-                <input type="text" id="f-cities" name="cities" placeholder="Gurugram, Pune" maxlength="150">
+                <input type="text" id="f-cities" name="cities" data-rule="cities" maxlength="100" placeholder="Gurugram, Pune" spellcheck="false">
               </div>
               <div class="field">
-                <label for="f-li">LinkedIn profile <span class="opt">(optional)</span></label>
-                <input type="text" id="f-li" name="linkedin" inputmode="url" placeholder="linkedin.com/in/yourname" maxlength="200">
+                <div class="label-row">
+                  <label for="f-li">LinkedIn profile link <span class="opt">(optional)</span></label>
+                  <button type="button" class="help-link" data-open="li-help">How do I find it?</button>
+                </div>
+                <input type="text" id="f-li" name="linkedin" data-rule="linkedin" inputmode="url" maxlength="300" placeholder="https://www.linkedin.com/in/yourname" autocapitalize="off" autocorrect="off" spellcheck="false">
+              </div>
+              <div class="field full">
+                <label for="f-cv">Your current CV <span class="opt">(optional)</span></label>
+                <div class="file-input">
+                  <input type="file" id="f-cv" name="cv" data-rule="cv" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                  <label for="f-cv" class="file-btn">Choose file</label>
+                  <span class="file-name">No file chosen</span>
+                  <button type="button" class="file-clear" hidden>Remove</button>
+                </div>
+                <p class="hint">PDF or Word, up to 5 MB. Any version is fine, we'll help you rework it.</p>
               </div>
               <div class="field full">
                 <label for="f-notes">Anything else we should know? <span class="opt">(optional)</span></label>
-                <textarea id="f-notes" name="notes" maxlength="500"></textarea>
+                <textarea id="f-notes" name="notes" data-rule="notes" maxlength="300"></textarea>
+                <span class="counter" aria-live="polite">0/300</span>
               </div>
               <div class="field full">
-                <label class="consent"><input type="checkbox" name="consent" required><span>I agree that Next Posting can store these details and contact me about my job search. My details won't be shared with anyone without my permission.</span></label>
+                <label class="consent"><input type="checkbox" name="consent" data-rule="consent"><span>I agree that Next Posting can store these details, and my CV if I upload one, and contact me about my job search. My details won't be shared with anyone without my permission.</span></label>
               </div>
             </div>
             <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
@@ -500,27 +553,27 @@
             <div class="form-grid">
               <div class="field">
                 <label for="m-name">Full name</label>
-                <input type="text" id="m-name" name="fullName" autocomplete="name" required maxlength="120">
+                <input type="text" id="m-name" name="fullName" data-rule="name" autocomplete="name" maxlength="60" autocapitalize="words" spellcheck="false">
               </div>
               <div class="field">
                 <label for="m-email">Email</label>
-                <input type="email" id="m-email" name="email" autocomplete="email" required maxlength="160">
+                <input type="email" id="m-email" name="email" data-rule="email" autocomplete="email" maxlength="100" autocapitalize="off" spellcheck="false">
               </div>
               <div class="field">
                 <label for="m-wa">WhatsApp number</label>
-                <input type="tel" id="m-wa" name="whatsapp" autocomplete="tel" placeholder="98765 43210" required maxlength="20">
+                <div class="prefix-input"><span>+91</span><input type="tel" id="m-wa" name="whatsapp" data-rule="phone" inputmode="numeric" autocomplete="tel-national" placeholder="9876543210"></div>
               </div>
               <div class="field">
                 <label for="m-company">Company</label>
-                <input type="text" id="m-company" name="company" autocomplete="organization" required maxlength="120">
+                <input type="text" id="m-company" name="company" data-rule="company" autocomplete="organization" maxlength="80">
               </div>
               <div class="field">
                 <label for="m-function">Function</label>
-                <input type="text" id="m-function" name="function" placeholder="Operations, HR, Finance" required maxlength="100">
+                <input type="text" id="m-function" name="function" data-rule="func" maxlength="60" placeholder="Operations, HR, Finance">
               </div>
               <div class="field">
                 <label for="m-seniority">Seniority</label>
-                <select id="m-seniority" name="seniority" required>
+                <select id="m-seniority" name="seniority" data-rule="choice">
                   <option value="">Select</option>
                   <option>Individual contributor</option>
                   <option>Manager</option>
@@ -528,7 +581,7 @@
                   <option>Director or above</option>
                 </select>
               </div>
-              <fieldset class="field full">
+              <fieldset class="field full" data-rule="multi">
                 <legend>How can you help?</legend>
                 <div class="toggles">
                   <label class="toggle"><input type="checkbox" name="canHelpWith" value="CV review"><span>CV review</span></label>
@@ -539,11 +592,14 @@
                 </div>
               </fieldset>
               <div class="field full">
-                <label for="m-li">LinkedIn profile <span class="opt">(optional)</span></label>
-                <input type="text" id="m-li" name="linkedin" inputmode="url" placeholder="linkedin.com/in/yourname" maxlength="200">
+                <div class="label-row">
+                  <label for="m-li">LinkedIn profile link</label>
+                  <button type="button" class="help-link" data-open="li-help">How do I find it?</button>
+                </div>
+                <input type="text" id="m-li" name="linkedin" data-rule="linkedin" data-required inputmode="url" maxlength="300" placeholder="https://www.linkedin.com/in/yourname" autocapitalize="off" autocorrect="off" spellcheck="false">
               </div>
               <div class="field full">
-                <label class="consent"><input type="checkbox" name="consent" required><span>I agree that Next Posting can store these details and contact me about mentoring.</span></label>
+                <label class="consent"><input type="checkbox" name="consent" data-rule="consent"><span>I agree that Next Posting can store these details and contact me about mentoring.</span></label>
               </div>
             </div>
             <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
@@ -575,6 +631,14 @@
           <p>No. We help you present yourself well and apply properly, and we refer where there's a genuine fit. The hiring decision is always the company's.</p>
         </details>
         <details>
+          <summary>Do mentors get paid?</summary>
+          <p>No. Mentoring is pro bono for now. We're building the community first, and our mentors give their time because they want to see people from the forces do well.</p>
+        </details>
+        <details>
+          <summary>Do you verify mentors?</summary>
+          <p>No. We don't vet or verify mentor profiles at the moment. We share a list of available mentors and suggest matches, but we haven't checked their backgrounds, so please use your own judgement before sharing anything personal. We never pass your contact details to a mentor without your consent. The job opportunities we share come from credible sources.</p>
+        </details>
+        <details>
           <summary>What happens after I register?</summary>
           <p>We'll contact you on WhatsApp or email. We're a small team, so it can take a few days.</p>
         </details>
@@ -587,6 +651,20 @@
   </section>
 
 </main>
+
+<dialog class="help-dialog" id="li-help" aria-labelledby="li-help-title">
+  <button type="button" class="dialog-close" aria-label="Close">&times;</button>
+  <h3 id="li-help-title">Finding your LinkedIn link</h3>
+  <p class="dialog-sub">On your phone (LinkedIn app)</p>
+  <ol>
+    <li>Tap your photo, then tap your name.</li>
+    <li>Tap the <strong>&middot;&middot;&middot;</strong> button on the right, then <strong>Share via</strong>, then <strong>Copy</strong>.</li>
+    <li>Paste it here.</li>
+  </ol>
+  <p class="dialog-sub">On a computer</p>
+  <p>Open your LinkedIn profile and copy the address from the top of your browser.</p>
+  <p class="dialog-example">It looks like: linkedin.com/in/yourname</p>
+</dialog>
 
 <footer class="site-footer">
   <div class="wrap">
@@ -639,8 +717,166 @@
     a.addEventListener('click', () => showTab(a.dataset.track));
   });
 
-  // Helpers
-  function timedFetch(url, opts, ms = 25000) {
+  // ---- Validation rules ----
+  const THIS_YEAR = new Date().getFullYear();
+  const DATE_MIN = (THIS_YEAR - 10) + '-01-01';
+  const DATE_MAX = (THIS_YEAR + 5) + '-12-31';
+  document.querySelectorAll('input[data-rule="date"]').forEach(el => {
+    el.min = DATE_MIN; el.max = DATE_MAX;
+    // Open the calendar wherever the box is clicked, not just on the icon
+    el.addEventListener('click', () => { try { el.showPicker(); } catch (e) {} });
+  });
+
+  // LinkedIn help pop-up
+  document.querySelectorAll('[data-open]').forEach(btn => {
+    const dlg = document.getElementById(btn.dataset.open);
+    btn.addEventListener('click', () => { if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', ''); });
+  });
+  document.querySelectorAll('.help-dialog').forEach(dlg => {
+    const close = () => { if (dlg.close) dlg.close(); else dlg.removeAttribute('open'); };
+    dlg.querySelector('.dialog-close').addEventListener('click', close);
+    dlg.addEventListener('click', e => { // tap outside the box to close
+      const r = dlg.getBoundingClientRect();
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) close();
+    });
+  });
+
+  const WORDS = /^[A-Za-z]+( [A-Za-z]+)*$/;
+  const EMAIL_RX = /^[a-z0-9](?:[a-z0-9._+-]*[a-z0-9])?@[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)*\.[a-z]{2,}$/;
+  const LI_RX = /^(?:https?:\/\/)?(?:[a-z]{2,3}\.)?linkedin\.com\/in\/([A-Za-z0-9-]{3,100})\/?(?:[?#].*)?$/i;
+  const CV_EXT = ['pdf', 'doc', 'docx'];
+  const CV_MAX = 5 * 1024 * 1024;
+  const collapse = v => v.replace(/ {2,}/g, ' ').replace(/^ +/, '');
+
+  // What each field allows while typing (anything else is removed instantly)
+  const FILTERS = {
+    name: v => collapse(v.replace(/[^A-Za-z ]/g, '')),
+    rank: v => collapse(v.replace(/[^A-Za-z ]/g, '')),
+    email: v => {
+      v = v.toLowerCase().replace(/[^a-z0-9@._+-]/g, '');
+      const i = v.indexOf('@');
+      return i < 0 ? v : v.slice(0, i + 1) + v.slice(i + 1).replace(/@/g, '');
+    },
+    phone: v => {
+      let d = v.replace(/\D/g, '');
+      if (d.length > 10 && d.startsWith('91')) d = d.slice(2);
+      else if (d.length > 10 && d.startsWith('0')) d = d.slice(1);
+      return d.slice(0, 10);
+    },
+    years: v => v.replace(/\D/g, '').slice(0, 2),
+    cities: v => collapse(v.replace(/[^A-Za-z ,]/g, '')).replace(/^,+/, '').replace(/,{2,}/g, ','),
+    linkedin: v => v.replace(/[^A-Za-z0-9\-_:\/.?=&%#]/g, '').slice(0, 300),
+    notes: v => v.replace(/[^A-Za-z0-9 .,\-()\/&'?!\n]/g, '').slice(0, 300),
+    company: v => collapse(v.replace(/[^A-Za-z0-9 &.\-'()]/g, '')),
+    func: v => collapse(v.replace(/[^A-Za-z &,\/\-]/g, ''))
+  };
+
+  // What makes each field valid (returns an error message, or '' when fine)
+  const CHECKS = {
+    name: v => {
+      v = v.trim();
+      if (!v) return 'Enter your full name.';
+      return WORDS.test(v) && v.replace(/ /g, '').length >= 2 ? '' : 'Use letters A to Z only.';
+    },
+    email: v => {
+      if (!v) return 'Enter your email.';
+      return EMAIL_RX.test(v) && !v.includes('..') ? '' : 'Enter a valid email, like name@example.com.';
+    },
+    phone: v => {
+      if (!v) return 'Enter your WhatsApp number.';
+      return /^[6-9]\d{9}$/.test(v) ? '' : 'Enter a 10-digit mobile number starting with 6, 7, 8 or 9.';
+    },
+    choice: v => v ? '' : 'Select an option.',
+    rank: v => {
+      v = v.trim();
+      return !v || WORDS.test(v) ? '' : 'Use letters A to Z only, e.g. Lt Col.';
+    },
+    years: v => {
+      if (!v) return 'Enter your years of service.';
+      return /^\d{1,2}$/.test(v) && Number(v) > 0 ? '' : 'Enter a valid number of years.';
+    },
+    date: v => {
+      if (!v) return 'Pick a date.';
+      return /^\d{4}-\d{2}-\d{2}$/.test(v) && v >= DATE_MIN && v <= DATE_MAX
+        ? '' : 'Pick a date between ' + (THIS_YEAR - 10) + ' and ' + (THIS_YEAR + 5) + '.';
+    },
+    cities: v => {
+      const parts = v.split(',').map(s => s.trim()).filter(Boolean);
+      if (parts.length > 5) return 'List up to 5 cities.';
+      return parts.every(p => WORDS.test(p)) ? '' : 'Use letters and commas only, e.g. Gurugram, Pune.';
+    },
+    linkedin: (v, el) => {
+      if (!v) return el.hasAttribute('data-required') ? 'Paste your LinkedIn profile link.' : '';
+      return LI_RX.test(v) ? '' : 'Paste your full profile link, like linkedin.com/in/yourname.';
+    },
+    cv: (v, el) => {
+      const f = el.files && el.files[0];
+      if (!f) return '';
+      const ext = (f.name.split('.').pop() || '').toLowerCase();
+      if (!CV_EXT.includes(ext)) return 'Upload a PDF or Word file (.pdf, .doc or .docx).';
+      if (f.size > CV_MAX) return 'This file is over 5 MB. Please upload a smaller one.';
+      if (f.size === 0) return 'This file is empty. Please choose another.';
+      return '';
+    },
+    notes: v => v.length <= 300 ? '' : 'Keep it under 300 characters.',
+    company: v => {
+      v = v.trim();
+      if (!v) return 'Enter your company.';
+      return v.length >= 2 && /[A-Za-z]/.test(v) ? '' : 'Enter a valid company name.';
+    },
+    func: v => {
+      v = v.trim();
+      if (!v) return 'Enter your function.';
+      return /[A-Za-z]{2,}/.test(v) ? '' : 'Use letters only, e.g. Operations.';
+    },
+    multi: (v, el) => el.querySelector('input:checked') ? '' : 'Pick at least one.',
+    consent: (v, el) => el.checked ? '' : 'Please tick this box to continue.'
+  };
+
+  const TRIM_ON_BLUR = ['name', 'rank', 'cities', 'linkedin', 'notes', 'company', 'func'];
+
+  function fieldOf(el) { return el.closest('.field'); }
+  function errorOf(el) {
+    const w = fieldOf(el);
+    let e = w.querySelector(':scope > .field-error');
+    if (!e) { e = document.createElement('p'); e.className = 'field-error'; w.appendChild(e); }
+    return e;
+  }
+  function validateField(el) {
+    const rule = el.dataset.rule;
+    const msg = CHECKS[rule](el.value || '', el);
+    fieldOf(el).classList.toggle('invalid', !!msg);
+    errorOf(el).textContent = msg;
+    if (rule !== 'multi') el.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    return !msg;
+  }
+  function applyFilter(el, fn) {
+    const old = el.value;
+    const nv = fn(old);
+    if (nv === old) return;
+    let pos = null;
+    try { pos = el.selectionStart; } catch (e) {}
+    el.value = nv;
+    if (pos !== null) {
+      const p = Math.max(0, pos - (old.length - nv.length));
+      try { el.setSelectionRange(p, p); } catch (e) {}
+    }
+  }
+
+  // ---- Helpers ----
+  const titleCase = s => s.trim().toLowerCase().replace(/\b[a-z]/g, c => c.toUpperCase());
+  const cleanCities = s => s.split(',').map(p => p.trim()).filter(Boolean).map(titleCase).join(', ');
+  const linkedinUrl = s => { const m = s.trim().match(LI_RX); return m ? 'https://www.linkedin.com/in/' + m[1] : ''; };
+  function readFileBase64(file) {
+    return new Promise((resolve, reject) => {
+      const r = new FileReader();
+      r.onload = () => resolve(String(r.result).split(',')[1] || '');
+      r.onerror = () => reject(new Error('Could not read the CV file. Please choose it again.'));
+      r.readAsDataURL(file);
+    });
+  }
+
+  function timedFetch(url, opts, ms) {
     const ctrl = new AbortController();
     const t = setTimeout(() => ctrl.abort(), ms);
     return fetch(url, { ...opts, signal: ctrl.signal }).finally(() => clearTimeout(t));
@@ -648,84 +884,127 @@
 
   async function send(payload) {
     const opts = { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) };
+    const ms = payload.cv ? 90000 : 25000;
     try {
-      const r = await timedFetch(CONFIG.API_URL, opts);
+      const r = await timedFetch(CONFIG.API_URL, opts, ms);
       if (r.status >= 500) throw new Error('worker unavailable');
       return await r.json();
     } catch (err) {
       // Fallback: go straight to Google if the Worker is unreachable
-      const r = await timedFetch(CONFIG.DIRECT_URL, opts);
+      const r = await timedFetch(CONFIG.DIRECT_URL, opts, ms);
       return await r.json();
     }
-  }
-
-  function normalisePhone(v) {
-    let d = v.replace(/[^\d+]/g, '');
-    if (/^\d{10}$/.test(d)) d = '+91' + d;
-    else if (/^91\d{10}$/.test(d)) d = '+' + d;
-    else if (/^0\d{10}$/.test(d)) d = '+91' + d.slice(1);
-    return d;
-  }
-
-  function normaliseLinkedIn(v) {
-    v = v.trim();
-    if (!v) return '';
-    if (!/^https?:\/\//i.test(v)) v = 'https://' + v;
-    return v;
   }
 
   function escapeHtml(s) {
     return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   }
 
-  // Forms
+  // ---- Forms ----
   document.querySelectorAll('form[data-track]').forEach(form => {
-    const errorEl = form.querySelector('.form-error');
+    const track = form.dataset.track;
+    const formError = form.querySelector('.form-error');
     const btn = form.querySelector('button[type="submit"]');
     const btnText = btn.textContent;
     const successEl = form.parentElement.querySelector('.success');
+    const fields = Array.from(form.querySelectorAll('[data-rule]'));
+
+    fields.forEach(el => {
+      const rule = el.dataset.rule;
+      if (rule === 'cv') {
+        const wrap = fieldOf(el);
+        const nameEl = wrap.querySelector('.file-name');
+        const clearBtn = wrap.querySelector('.file-clear');
+        const refresh = () => {
+          const f = el.files && el.files[0];
+          nameEl.textContent = f ? f.name : 'No file chosen';
+          clearBtn.hidden = !f;
+          validateField(el);
+        };
+        el.addEventListener('change', refresh);
+        clearBtn.addEventListener('click', () => { el.value = ''; refresh(); el.focus(); });
+        return;
+      }
+      if (rule === 'multi' || rule === 'consent' || rule === 'choice' || rule === 'date') {
+        el.addEventListener('change', () => validateField(el));
+        if (rule === 'date') el.addEventListener('blur', () => validateField(el));
+        return;
+      }
+      el.addEventListener('input', () => {
+        applyFilter(el, FILTERS[rule]);
+        if (rule === 'notes') {
+          const c = fieldOf(el).querySelector('.counter');
+          if (c) c.textContent = el.value.length + '/300';
+        }
+        if (el.dataset.touched) validateField(el);
+      });
+      el.addEventListener('blur', () => {
+        if (TRIM_ON_BLUR.includes(rule)) el.value = el.value.trim().replace(/,\s*$/, '');
+        el.dataset.touched = '1';
+        validateField(el);
+      });
+    });
 
     form.addEventListener('submit', async e => {
       e.preventDefault();
-      errorEl.textContent = '';
+      formError.textContent = '';
 
-      if (!form.checkValidity()) {
-        const bad = form.querySelector(':invalid');
-        const name = bad && bad.name;
-        errorEl.textContent = name === 'consent'
-          ? 'Please tick the consent box to continue.'
-          : 'Please fill in the highlighted field.';
-        if (bad) bad.focus();
-        return;
-      }
-
-      const fd = new FormData(form);
-      const payload = { track: form.dataset.track };
-      for (const [k, v] of fd.entries()) {
-        if (k === 'consent') continue;
-        if (payload[k] !== undefined) {
-          payload[k] = [].concat(payload[k], v);
-        } else {
-          payload[k] = v;
-        }
-      }
-      ['targetRoles', 'helpNeeded', 'canHelpWith'].forEach(k => {
-        if (payload[k] !== undefined && !Array.isArray(payload[k])) payload[k] = [payload[k]];
+      let first = null;
+      fields.forEach(el => {
+        el.dataset.touched = '1';
+        if (!validateField(el) && !first) first = el;
       });
-
-      payload.whatsapp = normalisePhone(payload.whatsapp || '');
-      const digits = payload.whatsapp.replace(/\D/g, '');
-      if (digits.length < 10 || digits.length > 15) {
-        errorEl.textContent = 'Please enter a valid WhatsApp number.';
-        form.querySelector('[name="whatsapp"]').focus();
+      if (first) {
+        formError.textContent = 'Please fix the highlighted fields.';
+        (first.matches('fieldset') ? first.querySelector('input') : first).focus();
         return;
       }
-      if (payload.linkedin !== undefined) payload.linkedin = normaliseLinkedIn(payload.linkedin);
+
+      const get = n => (form.elements[n] ? form.elements[n].value : '');
+      const multi = n => Array.from(form.querySelectorAll('input[name="' + n + '"]:checked')).map(i => i.value);
+
+      const payload = {
+        track: track,
+        website: get('website'),
+        fullName: titleCase(get('fullName')),
+        email: get('email').trim(),
+        whatsapp: '+91' + get('whatsapp'),
+        linkedin: linkedinUrl(get('linkedin'))
+      };
+      if (track === 'forces') {
+        Object.assign(payload, {
+          service: get('service'),
+          category: get('category'),
+          rank: titleCase(get('rank')),
+          yearsOfService: String(Number(get('yearsOfService'))),
+          releaseDate: get('releaseDate'),
+          targetRoles: multi('targetRoles'),
+          helpNeeded: multi('helpNeeded'),
+          cities: cleanCities(get('cities')),
+          notes: get('notes').trim()
+        });
+      } else {
+        Object.assign(payload, {
+          company: get('company').trim(),
+          function: get('function').trim(),
+          seniority: get('seniority'),
+          canHelpWith: multi('canHelpWith')
+        });
+      }
 
       btn.disabled = true;
       btn.textContent = 'Registering...';
 
       try {
+        const cvInput = form.querySelector('input[data-rule="cv"]');
+        const cvFile = cvInput && cvInput.files && cvInput.files[0];
+        if (cvFile) {
+          btn.textContent = 'Uploading CV...';
+          payload.cv = {
+            ext: cvFile.name.split('.').pop().toLowerCase(),
+            data: await readFileBase64(cvFile)
+          };
+        }
         const res = await send(payload);
         if (!res || !res.ok) throw new Error((res && res.error) || 'Registration failed. Please try again.');
 
@@ -747,7 +1026,7 @@
         successEl.hidden = false;
         successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } catch (err) {
-        errorEl.textContent = err.name === 'AbortError'
+        formError.textContent = err.name === 'AbortError'
           ? 'This is taking too long. Please check your connection and try again.'
           : (err.message && err.message !== 'Failed to fetch' ? err.message : 'Could not connect. Please check your connection and try again.');
       } finally {
